@@ -2387,16 +2387,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - waveName: Wave1
-    noOfEnemies: 3
+    noOfEnemies: 5
     typeOfEnemies:
-    - {fileID: 2489472318681787456, guid: c84f436e19fdf00499d2a4de389bb90d, type: 3}
+    - {fileID: 2489472318681787456, guid: 82ef6f100bd958c4f9e0ad4c41d35348, type: 3}
     spawnInterval: 3
   - waveName: Wave2
     noOfEnemies: 6
     typeOfEnemies:
-    - {fileID: 2489472318681787456, guid: c1c040b03fd934c4d81fcca9c313af35, type: 3}
+    - {fileID: 2489472318681787456, guid: c84f436e19fdf00499d2a4de389bb90d, type: 3}
     - {fileID: 2489472318681787456, guid: a6c40ddec0323bd49b4a50e03c64306d, type: 3}
-    spawnInterval: 1
+    spawnInterval: 2
   waveName: {fileID: 603713584}
 --- !u!4 &1606792256
 Transform:

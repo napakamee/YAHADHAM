@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyFirePattern : MonoBehaviour
 {
-    [SerializeField] bool isFireSpread;
+    [SerializeField] bool isSpread;
     [SerializeField] bool normalFire;
     [SerializeField] int bulletAmount = 3;
     [SerializeField] float startAngle = 90f, endAngle = 270f;
@@ -56,7 +56,7 @@ public class EnemyFirePattern : MonoBehaviour
             if (normalFire)
                 spawnBullet();
 
-            if (isFireSpread)
+            if (isSpread)
                 spawnSpreadBullet();
         }
     }

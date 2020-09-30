@@ -79,7 +79,7 @@ public class CrosshairController : MonoBehaviour
             {
                 if (!grapplingHook.Shot)
                 {
-                    if (touchPos.x > -7)
+                    if (touchPos.x > -6)
                     {
                         spriteRenderer.enabled = true;
                         crosshair.transform.position = new Vector2(touchPos.x - 1.5f, touchPos.y);
