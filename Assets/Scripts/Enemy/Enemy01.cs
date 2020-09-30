@@ -5,11 +5,13 @@ using MyBox;
 
 public class Enemy01 : MonoBehaviour
 {
-    [SerializeField] private Transform player;
-    [Separator("Behaviors")]
+    
+    [Separator("Behavior")]
     [SerializeField] bool isFollowPlayer;
+    [ConditionalField(nameof(isFollowPlayer))] [SerializeField] Transform player;
     [SerializeField] bool isRandomSpeed;
-    [ConditionalField(nameof(isRandomSpeed))] public float minSpeed, maxSpeed, randSpeed = 3;
+    [ConditionalField(nameof(isRandomSpeed))] public float minSpeed, maxSpeed, randSpeed;
+
     [Separator("Normal Stat")]
     public float speed = 3.0f;
     public float damage = 5f;
@@ -43,10 +45,10 @@ public class Enemy01 : MonoBehaviour
         {
             hp--;
             Destroy(other.gameObject);
+            
             if (hp <= 0)
-            {
                 Destroy(this.gameObject);
-            }
+
         }
         if (other.GetComponent<Collider2D>().tag.Contains("Player"))
         {

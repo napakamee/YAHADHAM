@@ -1,15 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MyBox;
 
 public class EnemyFirePattern : MonoBehaviour
 {
-    [SerializeField] bool isSpread;
-    [SerializeField] bool normalFire;
-    [SerializeField] int bulletAmount = 3;
-    [SerializeField] float startAngle = 90f, endAngle = 270f;
-    private Vector2 bulletMoveDirection;
     public GameObject bullet;
+    [Separator("Behavior")]
+    [SerializeField] bool normalFire;
+    [SerializeField] bool isSpread;
+    [ConditionalField(nameof(isSpread))] [SerializeField] int bulletAmount = 3;
+    [ConditionalField(nameof(isSpread))] [SerializeField] float startAngle = 90f, endAngle = 270f;
+
+    private Vector2 bulletMoveDirection;
+
+
+    [Separator("Normal Stat")]
     public float bulletSpeed = 10.0f;
     public float firerate = 2.0f;
     // Start is called before the first frame update

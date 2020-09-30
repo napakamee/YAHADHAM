@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 8308620607411382185}
   - component: {fileID: 8308620607411382184}
   - component: {fileID: 8308620607411382198}
-  - component: {fileID: 332241843064500413}
+  - component: {fileID: 2059528795691561006}
+  - component: {fileID: 2948748003968002649}
   m_Layer: 0
   m_Name: MaxHPUpgrade
   m_TagString: Item
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 8308620607411382196}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -166.13, y: -416.03, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -73,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4725b4d1ef6d0ea438565b3b8cd96f14, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 886b9f28ad4596341941f6c038af83a1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.8627451}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -98,13 +99,13 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!114 &8308620607411382198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,8 +119,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 3
---- !u!60 &332241843064500413
-PolygonCollider2D:
+--- !u!58 &2059528795691561006
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -132,28 +133,16 @@ PolygonCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.37, y: 0.26}
-    newSize: {x: 2.56, y: 2.56}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.024681568, y: 0.13161507}
-      - {x: -0.05093521, y: 0.070928305}
-      - {x: -0.1821869, y: -0.010323469}
-      - {x: -0.15124482, y: -0.07593531}
-      - {x: -0.113115475, y: -0.11406469}
-      - {x: -0.06498614, y: -0.10468355}
-      - {x: -0.044638753, y: -0.12101659}
-      - {x: 0.037465334, y: -0.12287301}
-      - {x: 0.06222427, y: -0.10484527}
-      - {x: 0.12405756, y: -0.115935296}
-      - {x: 0.1624965, y: -0.058748253}
-      - {x: 0.1737482, y: -0.0065681953}
-      - {x: 0.03888285, y: 0.06994411}
-      - {x: 0.023115478, y: 0.13}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!247 &2948748003968002649
+ConstantForce2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8308620607411382196}
+  m_Enabled: 1
+  m_Force: {x: 0, y: 0}
+  m_RelativeForce: {x: 0, y: 0}
+  m_Torque: 10
