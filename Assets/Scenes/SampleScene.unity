@@ -420,6 +420,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 2704698241945905035, guid: 8284ec64b7b81664ab0197e024365b0c,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8284ec64b7b81664ab0197e024365b0c, type: 3}
 --- !u!4 &135038429 stripped
@@ -680,6 +685,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireRateUpgrade (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2704698241945905035, guid: 8284ec64b7b81664ab0197e024365b0c,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8284ec64b7b81664ab0197e024365b0c, type: 3}
 --- !u!1 &519420028
@@ -718,7 +728,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -941,6 +951,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireRateUpgrade (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2704698241945905035, guid: 8284ec64b7b81664ab0197e024365b0c,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8284ec64b7b81664ab0197e024365b0c, type: 3}
 --- !u!4 &690001941 stripped
@@ -989,7 +1004,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 74.55997, y: -52.99997}
+  m_AnchoredPosition: {x: 58.5, y: -50.5}
   m_SizeDelta: {x: 25, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &850772866
@@ -1011,7 +1026,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9d7c6e4896067aa4fa512a00f692ac1c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3e64fe05540dda445af1b6efe2b56153, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1707,6 +1722,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8003477462069795932, guid: 8042eae707ff31741a081d07d19aaa97,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8042eae707ff31741a081d07d19aaa97, type: 3}
 --- !u!4 &1197539866 stripped
@@ -1788,6 +1808,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireRateUpgrade (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2704698241945905035, guid: 8284ec64b7b81664ab0197e024365b0c,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8284ec64b7b81664ab0197e024365b0c, type: 3}
 --- !u!1001 &1210580644
@@ -1857,6 +1882,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8003477462069795932, guid: 8042eae707ff31741a081d07d19aaa97,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8042eae707ff31741a081d07d19aaa97, type: 3}
 --- !u!1001 &1211377753
@@ -1924,6 +1954,11 @@ PrefabInstance:
     - target: {fileID: 8003477462069795907, guid: 8042eae707ff31741a081d07d19aaa97,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8003477462069795932, guid: 8042eae707ff31741a081d07d19aaa97,
+        type: 3}
+      propertyPath: m_Constraints
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8003477462069795935, guid: 8042eae707ff31741a081d07d19aaa97,
@@ -2000,6 +2035,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireRateUpgrade (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2704698241945905035, guid: 8284ec64b7b81664ab0197e024365b0c,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8284ec64b7b81664ab0197e024365b0c, type: 3}
 --- !u!1 &1297201792
@@ -2036,7 +2076,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 163.60995, y: -52.99997}
+  m_AnchoredPosition: {x: 130.5, y: -50.5}
   m_SizeDelta: {x: 30, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1297201794
@@ -2058,7 +2098,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4725b4d1ef6d0ea438565b3b8cd96f14, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a150f9bcd955f2e43ade08f1d90db721, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2274,6 +2314,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8003477462069795932, guid: 8042eae707ff31741a081d07d19aaa97,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8042eae707ff31741a081d07d19aaa97, type: 3}
 --- !u!1 &1497491957
@@ -2310,8 +2355,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 29, y: -53}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchoredPosition: {x: 26.2, y: -50.5}
+  m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1497491959
 MonoBehaviour:
@@ -2332,7 +2377,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fde575ea5128bc747b1fb00e6f385559, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9a50d1b7d8dae444db9eaa49ef105b9b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2477,6 +2522,11 @@ PrefabInstance:
     - target: {fileID: 8003477462069795907, guid: 8042eae707ff31741a081d07d19aaa97,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8003477462069795932, guid: 8042eae707ff31741a081d07d19aaa97,
+        type: 3}
+      propertyPath: m_Constraints
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2832,7 +2882,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 119.01996, y: -52.99997}
+  m_AnchoredPosition: {x: 94.4, y: -50.5}
   m_SizeDelta: {x: 25, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1731883353
@@ -2854,7 +2904,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 49b611e658efbf443b686a4036f74fe3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8cc55ba06bb45ed489c40fe86ec9eaa4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2988,6 +3038,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 250320304751298443, guid: 9f3ddc9f314503244b248b4ceb1958ac,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 250320304751298447, guid: 9f3ddc9f314503244b248b4ceb1958ac,
         type: 3}
       propertyPath: m_Name
@@ -3062,6 +3117,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireRateUpgrade
       objectReference: {fileID: 0}
+    - target: {fileID: 2704698241945905035, guid: 8284ec64b7b81664ab0197e024365b0c,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8284ec64b7b81664ab0197e024365b0c, type: 3}
 --- !u!1001 &4488055612212558286
@@ -3130,6 +3190,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DamageUpgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488055611591001251, guid: a1f1869c3b599e34c8871e1ad2322b7b,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1f1869c3b599e34c8871e1ad2322b7b, type: 3}
@@ -3200,6 +3265,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8003477462069795932, guid: 8042eae707ff31741a081d07d19aaa97,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8042eae707ff31741a081d07d19aaa97, type: 3}
 --- !u!1001 &8308620605979675000
@@ -3209,6 +3279,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1323766719}
     m_Modifications:
+    - target: {fileID: 8308620607411382184, guid: 609c8add333b3534484e3538dfa5d739,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8308620607411382196, guid: 609c8add333b3534484e3538dfa5d739,
         type: 3}
       propertyPath: m_Name
