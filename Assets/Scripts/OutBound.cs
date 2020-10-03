@@ -17,7 +17,7 @@ public class OutBound : MonoBehaviour
     void Update()
     {
         if(transform.position.x > screenBounds.x * 1.2 || transform.position.x < screenBounds.x * -1.2 
-        || transform.position.y > screenBounds.y * 1.2 || transform.position.y < screenBounds.y * -1.2){
+        || transform.position.y > screenBounds.y * 1.5 || transform.position.y < screenBounds.y * -1.5){
             Destroy(this.gameObject);
         }
     }

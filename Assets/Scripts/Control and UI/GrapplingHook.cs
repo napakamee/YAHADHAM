@@ -18,6 +18,7 @@ public class GrapplingHook : MonoBehaviour
     }
     GameObject traget;
     ShipControl shipControl;
+    public AudioClip hookSound;
     private void Start()
     {
         rope.positionCount = 0;
@@ -43,6 +44,7 @@ public class GrapplingHook : MonoBehaviour
         HookIns.GetComponent<Rigidbody2D>().AddForce(transform.up * HookShotSpeed);
         traget = HookIns;
         Shot = true;
+        this.GetComponent<AudioSource>().PlayOneShot(hookSound);
     }
     public void returned()
     {

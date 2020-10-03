@@ -46,6 +46,11 @@ public class ShipControl : MonoBehaviour
     public Image BulletSpeedUpgradeStatus;
     public Image MaxHPUpgradeStatus;
 
+    public AudioClip fireSound;
+    public AudioClip collectSound;
+    public AudioClip changeModeSound;
+
+
     //public Slider healthBar;
 
     // Start is called before the first frame update
@@ -97,6 +102,7 @@ public class ShipControl : MonoBehaviour
                             HookAiming = true;
                             HookLineRenderer.positionCount = 0;
                             CrosshairRenderer.enabled = false;
+                            this.GetComponent<AudioSource>().PlayOneShot(changeModeSound);
                         }
                     }
                 }
@@ -140,18 +146,18 @@ public class ShipControl : MonoBehaviour
         Rigidbody2D rb_bl = bl.GetComponent<Rigidbody2D>();
 
         rb_bl.AddForce(firePoint.up * GameManagement.Instance.bulletForce / 20, ForceMode2D.Force);
-        this.GetComponent<AudioSource>().Play();
+        this.GetComponent<AudioSource>().PlayOneShot(fireSound);
     }
 
     public void PickDamageUpgrade()
     {
-        if (GameManagement.Instance.BulletDamage < 11)
+        if (GameManagement.Instance.BulletDamage < 6)
         {
-            GameManagement.Instance.BulletDamage += 2;
+            GameManagement.Instance.BulletDamage += 1;
 
-            if (GameManagement.Instance.BulletDamage > 11)
+            if (GameManagement.Instance.BulletDamage > 6)
             {
-                GameManagement.Instance.BulletDamage = 11;
+                GameManagement.Instance.BulletDamage = 6;
 
             }
 
@@ -167,6 +173,7 @@ public class ShipControl : MonoBehaviour
             Debug.Log("Damage is Fully Upgraded(5).");
         }
 
+        this.GetComponent<AudioSource>().PlayOneShot(collectSound);
 
     }
     public void PickFireRateUpgrade()
@@ -192,7 +199,7 @@ public class ShipControl : MonoBehaviour
             Debug.Log("Fire Rate is Fully Upgraded(5).");
         }
 
-
+        this.GetComponent<AudioSource>().PlayOneShot(collectSound);
     }
     public void PickBulletSpeedUpgrade()
     {
@@ -217,7 +224,7 @@ public class ShipControl : MonoBehaviour
             Debug.Log("Bullet Speed is Fully Upgraded(5).");
         }
 
-
+this.GetComponent<AudioSource>().PlayOneShot(collectSound);
     }
     public void PickMaxHPUpgrade()
     {
@@ -242,12 +249,13 @@ public class ShipControl : MonoBehaviour
         {
             Debug.Log("Max HP is Fully Upgraded(5).");
         }
+        this.GetComponent<AudioSource>().PlayOneShot(collectSound);
     }
     public void PickRepairKit()
     {
         if (GameManagement.Instance.m_hp < GameManagement.Instance.Max_HP)
         {
-            GameManagement.Instance.m_hp += 25.0f;
+            GameManagement.Instance.m_hp += 10.0f;
 
             if (GameManagement.Instance.m_hp > GameManagement.Instance.Max_HP)
             {
@@ -255,5 +263,6 @@ public class ShipControl : MonoBehaviour
 
             }
         }
+        this.GetComponent<AudioSource>().PlayOneShot(collectSound);
     }
 }

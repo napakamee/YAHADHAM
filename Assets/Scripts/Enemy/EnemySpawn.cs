@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySpawn : MonoBehaviour
 {
-    public GameObject Enemy01;
+    public GameObject Enemy;
     public float respawnTime = 3.0f;
     private Vector2 screenBounds;
 
@@ -14,7 +14,7 @@ public class EnemySpawn : MonoBehaviour
         StartCoroutine(enemyWave());
     }
     private void spawnEnemy(){
-        GameObject a = Instantiate(Enemy01) as GameObject;
+        GameObject a = Instantiate(Enemy) as GameObject;
         a.transform.position = new Vector2(screenBounds.x * 2, Random.Range(-screenBounds.y, screenBounds.y));
     }
     IEnumerator enemyWave(){

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8308620607411382198}
   - component: {fileID: 2059528795691561006}
   - component: {fileID: 2948748003968002649}
+  - component: {fileID: -3353458206825472949}
   m_Layer: 0
   m_Name: MaxHPUpgrade
   m_TagString: Item
@@ -143,6 +144,18 @@ ConstantForce2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8308620607411382196}
   m_Enabled: 1
-  m_Force: {x: 0, y: 0}
+  m_Force: {x: 0, y: 0.3}
   m_RelativeForce: {x: 0, y: 0}
   m_Torque: 10
+--- !u!114 &-3353458206825472949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8308620607411382196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0758038070278544cb3d775e4bbbb1fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

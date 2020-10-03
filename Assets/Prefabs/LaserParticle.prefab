@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 572109100967416452}
   - component: {fileID: 158842179751548103}
   m_Layer: 0
-  m_Name: ExplosionParticle
+  m_Name: LaserParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,7 +116,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.2
+      scalar: 0.5
       minScalar: 0.05
       maxCurve:
         serializedVersion: 2
@@ -222,54 +222,54 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 1, g: 0.82871854, b: 0, a: 1}
-      maxColor: {r: 1, g: 0.32131007, b: 0, a: 1}
+      minColor: {r: 0.15217781, g: 0, b: 1, a: 1}
+      maxColor: {r: 0, g: 0.8023877, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
-        key2: {r: 0, g: 0, b: 0, a: 0}
-        key3: {r: 0, g: 0, b: 0, a: 0}
-        key4: {r: 0, g: 0, b: 0, a: 0}
-        key5: {r: 0, g: 0, b: 0, a: 0}
-        key6: {r: 0, g: 0, b: 0, a: 0}
+        key0: {r: 0.46659088, g: 0, b: 1, a: 1}
+        key1: {r: 0.23921567, g: 0.7538996, b: 1, a: 1}
+        key2: {r: 0.051886797, g: 0.15686275, b: 1, a: 1}
+        key3: {r: 0, g: 0.9056604, b: 0.18433993, a: 0}
+        key4: {r: 1, g: 0.83615816, b: 0, a: 0}
+        key5: {r: 1, g: 0.36519504, b: 0, a: 0}
+        key6: {r: 1, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 65535
-        ctime2: 0
-        ctime3: 0
-        ctime4: 0
-        ctime5: 0
-        ctime6: 0
+        ctime1: 8288
+        ctime2: 18311
+        ctime3: 29876
+        ctime4: 39707
+        ctime5: 51850
+        ctime6: 65535
         ctime7: 0
         atime0: 0
         atime1: 65535
-        atime2: 0
+        atime2: 65535
         atime3: 0
         atime4: 0
         atime5: 0
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_NumColorKeys: 2
+        m_NumColorKeys: 7
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
-        key2: {r: 0, g: 0, b: 0, a: 0}
-        key3: {r: 0, g: 0, b: 0, a: 0}
-        key4: {r: 0, g: 0, b: 0, a: 0}
-        key5: {r: 0, g: 0, b: 0, a: 0}
-        key6: {r: 0, g: 0, b: 0, a: 0}
+        key0: {r: 0.46659088, g: 0, b: 1, a: 1}
+        key1: {r: 0.23921567, g: 0.7538996, b: 1, a: 1}
+        key2: {r: 0.051886797, g: 0.15686275, b: 1, a: 0}
+        key3: {r: 0, g: 0.9056604, b: 0.18433993, a: 0}
+        key4: {r: 1, g: 0.83615816, b: 0, a: 0}
+        key5: {r: 1, g: 0.36519504, b: 0, a: 0}
+        key6: {r: 1, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 65535
-        ctime2: 0
-        ctime3: 0
-        ctime4: 0
-        ctime5: 0
-        ctime6: 0
+        ctime1: 8288
+        ctime2: 18311
+        ctime3: 29876
+        ctime4: 39707
+        ctime5: 51850
+        ctime6: 65535
         ctime7: 0
         atime0: 0
         atime1: 65535
@@ -280,7 +280,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_NumColorKeys: 2
+        m_NumColorKeys: 7
         m_NumAlphaKeys: 2
     startSize:
       serializedVersion: 2
@@ -4823,7 +4823,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: fdb16355c723a4447b491133b39a7b8b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b41464aef394c2f4ca55d045a77757a0, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

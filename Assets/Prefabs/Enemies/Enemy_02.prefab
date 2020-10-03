@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2489472318681787456}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 20, y: -3.2539444, z: 0}
+  m_LocalPosition: {x: 20, y: 1.6709403, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: d48177b7235355448a05332c5c3d72f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -136,11 +136,12 @@ MonoBehaviour:
   isFollowPlayer: 1
   player: {fileID: 0}
   isRandomSpeed: 1
+  isLaser: 0
   minSpeed: 1
   maxSpeed: 3
   randSpeed: 3
   speed: 1
   damage: 10
   hp: 10
-  explosion: {fileID: 572109100967416453, guid: fd9915d44c35e474d9333498a126fa72,
+  explosion: {fileID: 572109100967416453, guid: 309b57b706d3f2947b9f23566f5bd80e,
     type: 3}

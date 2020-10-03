@@ -1753,15 +1753,30 @@ PrefabInstance:
       propertyPath: player.m_Bits
       value: 256
       objectReference: {fileID: 0}
+    - target: {fileID: -855568378762175695, guid: 62638330edb987244b3644b65f0201e4,
+        type: 3}
+      propertyPath: isLaser
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 614668189872672778, guid: 62638330edb987244b3644b65f0201e4,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 614668189872672778, guid: 62638330edb987244b3644b65f0201e4,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 695556777865201373, guid: 62638330edb987244b3644b65f0201e4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.53
+      value: 14.49
       objectReference: {fileID: 0}
     - target: {fileID: 695556777865201373, guid: 62638330edb987244b3644b65f0201e4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.31
+      value: 1.85
       objectReference: {fileID: 0}
     - target: {fileID: 695556777865201373, guid: 62638330edb987244b3644b65f0201e4,
         type: 3}
@@ -2296,7 +2311,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1323766719
 Transform:
   m_ObjectHideFlags: 0
@@ -2490,6 +2505,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1606792256}
   - component: {fileID: 1606792255}
+  - component: {fileID: 1606792257}
+  - component: {fileID: 1606792258}
+  - component: {fileID: 1606792259}
   m_Layer: 0
   m_Name: Spawnner
   m_TagString: Untagged
@@ -2536,6 +2554,66 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1606792257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606792254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61a569a737c1ad4d87dd57e2f1cd64c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Item:
+  - {fileID: 8003477462069795904, guid: 8042eae707ff31741a081d07d19aaa97, type: 3}
+  - {fileID: 4488055611591001250, guid: a1f1869c3b599e34c8871e1ad2322b7b, type: 3}
+  - {fileID: 2704698241945905031, guid: 8284ec64b7b81664ab0197e024365b0c, type: 3}
+  - {fileID: 250320304751298447, guid: 9f3ddc9f314503244b248b4ceb1958ac, type: 3}
+  - {fileID: 8308620607411382196, guid: 609c8add333b3534484e3538dfa5d739, type: 3}
+  respawnTime: 10
+  isRandomTime: 1
+  maxTime: 20
+  minTime: 10
+--- !u!114 &1606792258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606792254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61a569a737c1ad4d87dd57e2f1cd64c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Item:
+  - {fileID: 250320304751298447, guid: 9f3ddc9f314503244b248b4ceb1958ac, type: 3}
+  respawnTime: 10
+  isRandomTime: 0
+  maxTime: 0
+  minTime: 0
+--- !u!114 &1606792259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606792254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61a569a737c1ad4d87dd57e2f1cd64c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Item:
+  - {fileID: 8003477462069795904, guid: 8042eae707ff31741a081d07d19aaa97, type: 3}
+  - {fileID: 4488055611591001250, guid: a1f1869c3b599e34c8871e1ad2322b7b, type: 3}
+  - {fileID: 2704698241945905031, guid: 8284ec64b7b81664ab0197e024365b0c, type: 3}
+  respawnTime: 10
+  isRandomTime: 0
+  maxTime: 20
+  minTime: 10
 --- !u!1 &1673007993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2783,6 +2861,9 @@ MonoBehaviour:
   FireRateUpgradeStatus: {fileID: 850772866}
   BulletSpeedUpgradeStatus: {fileID: 1731883353}
   MaxHPUpgradeStatus: {fileID: 1297201794}
+  fireSound: {fileID: 8300000, guid: b8f67c20567cde24a9dddec07fe8737a, type: 3}
+  collectSound: {fileID: 8300000, guid: d0a18266c88b88a45b907ee4dc5ad11c, type: 3}
+  changeModeSound: {fileID: 8300000, guid: 3b08e4c01d90ffb48a6be60cb258a8eb, type: 3}
 --- !u!50 &1704431551
 Rigidbody2D:
   serializedVersion: 4
@@ -2845,6 +2926,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d374061dd33f14e4bb7c2bae581a59de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 572109100967416453, guid: 309b57b706d3f2947b9f23566f5bd80e,
+    type: 3}
+  laserExplode: {fileID: 572109100967416453, guid: fd9915d44c35e474d9333498a126fa72,
+    type: 3}
+  explodeSound: {fileID: 8300000, guid: fdb16355c723a4447b491133b39a7b8b, type: 3}
 --- !u!114 &1704431555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2862,6 +2948,7 @@ MonoBehaviour:
   HookGunPos: {fileID: 1100231749}
   crosshairPos: {fileID: 1127957672}
   rope: {fileID: 1704431556}
+  hookSound: {fileID: 8300000, guid: 0d45269a7cf182241bb0e86e6daae17b, type: 3}
 --- !u!120 &1704431556
 LineRenderer:
   m_ObjectHideFlags: 0

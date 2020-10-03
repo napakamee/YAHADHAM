@@ -10,6 +10,7 @@ public class Enemy01 : MonoBehaviour
     [SerializeField] bool isFollowPlayer;
     [ConditionalField(nameof(isFollowPlayer))] [SerializeField] Transform player;
     [SerializeField] bool isRandomSpeed;
+    [SerializeField] bool isLaser;
     [ConditionalField(nameof(isRandomSpeed))] public float minSpeed, maxSpeed, randSpeed;
 
     [Separator("Normal Stat")]
@@ -54,7 +55,7 @@ public class Enemy01 : MonoBehaviour
                 Destroy(this.gameObject);
 
         }
-        if (other.GetComponent<Collider2D>().tag.Contains("Player"))
+        if (other.GetComponent<Collider2D>().tag.Contains("Player") && !isLaser)
         {
             GameObject expl = Instantiate(explosion, transform.position, Quaternion.identity) as GameObject;
             GameManagement.Instance.m_hp -= damage;
