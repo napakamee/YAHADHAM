@@ -16,6 +16,8 @@ public class Enemy01 : MonoBehaviour
     public float speed = 3.0f;
     public float damage = 5f;
     public float hp = 3;
+
+    public GameObject explosion;
     private Rigidbody2D rb;
     private Vector2 screenBounds;
     // Start is called before the first frame update
@@ -43,8 +45,10 @@ public class Enemy01 : MonoBehaviour
     {
         if (other.GetComponent<Collider2D>().tag.Contains("Bullet"))
         {
+            GameObject expl = Instantiate(explosion, transform.position, Quaternion.identity) as GameObject;
             hp--;
             Destroy(other.gameObject);
+            Destroy(expl,1);
             
             if (hp <= 0)
                 Destroy(this.gameObject);
@@ -52,7 +56,9 @@ public class Enemy01 : MonoBehaviour
         }
         if (other.GetComponent<Collider2D>().tag.Contains("Player"))
         {
+            GameObject expl = Instantiate(explosion, transform.position, Quaternion.identity) as GameObject;
             GameManagement.Instance.m_hp -= damage;
+            Destroy(expl,1);
             Destroy(this.gameObject);
         }
 

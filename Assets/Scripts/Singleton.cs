@@ -1,9 +1,5 @@
 ﻿using UnityEngine;
- 
-/// <summary>
-/// Inherit from this base class to create a singleton.
-/// e.g. public class MyClassName : Singleton<MyClassName> {}
-/// </summary>
+
 public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
     // Check to see if we're about to be destroyed.
@@ -39,9 +35,10 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
                         var singletonObject = new GameObject();
                         m_Instance = singletonObject.AddComponent<T>();
                         singletonObject.name = typeof(T).ToString() + " (Singleton)";
- 
                         // Make instance persistent.
                         DontDestroyOnLoad(singletonObject);
+                    }else{
+                        DontDestroyOnLoad(m_Instance.gameObject);
                     }
                 }
  
@@ -59,6 +56,12 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
  
     private void OnDestroy()
     {
-        m_ShuttingDown = true;
+        //m_ShuttingDown = true;
+    }
+ 
+    
+    void Awake()
+    {        
+        var t = Singleton<T>.Instance;
     }
 }

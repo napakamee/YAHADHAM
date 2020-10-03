@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 public class ShipControl : MonoBehaviour
 {
     public float speed = 3.0f;
@@ -139,6 +140,7 @@ public class ShipControl : MonoBehaviour
         Rigidbody2D rb_bl = bl.GetComponent<Rigidbody2D>();
 
         rb_bl.AddForce(firePoint.up * GameManagement.Instance.bulletForce / 20, ForceMode2D.Force);
+        this.GetComponent<AudioSource>().Play();
     }
 
     public void PickDamageUpgrade()

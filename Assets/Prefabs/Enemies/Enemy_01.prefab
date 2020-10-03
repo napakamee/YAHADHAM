@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 695556777865201373}
   - component: {fileID: 614668189872672778}
   - component: {fileID: -3784265021601901480}
-  - component: {fileID: -855568378762175695}
   - component: {fileID: 7698492086516797673}
+  - component: {fileID: -855568378762175695}
   - component: {fileID: 2161292499664913352}
   m_Layer: 9
   m_Name: Enemy_01
@@ -106,26 +106,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-855568378762175695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2489472318681787456}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6c87f6ebeafe39459f3992fab4f16ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  isFollowPlayer: 0
-  isRandomSpeed: 0
-  minSpeed: 0
-  maxSpeed: 0
-  randSpeed: 3
-  speed: 3
-  hp: 3
 --- !u!58 &7698492086516797673
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -142,6 +122,29 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &-855568378762175695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2489472318681787456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6c87f6ebeafe39459f3992fab4f16ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFollowPlayer: 0
+  player: {fileID: 0}
+  isRandomSpeed: 0
+  minSpeed: 0
+  maxSpeed: 0
+  randSpeed: 3
+  speed: 3
+  damage: 5
+  hp: 3
+  explosion: {fileID: 572109100967416453, guid: fd9915d44c35e474d9333498a126fa72,
+    type: 3}
 --- !u!114 &2161292499664913352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,11 +157,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0426c15e8dbd1754d8d5b063369515d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFireSpread: 0
+  bullet: {fileID: 9181984642786646354, guid: 8dd9bcf342d98194bb191f881a12df55, type: 3}
   normalFire: 1
+  isSpread: 0
   bulletAmount: 3
   startAngle: 90
   endAngle: 270
-  bullet: {fileID: 9181984642786646354, guid: 8dd9bcf342d98194bb191f881a12df55, type: 3}
+  isLaser: 0
+  laserStart: {fileID: 0}
+  laserMiddle: {fileID: 0}
+  laserEnd: {fileID: 0}
   bulletSpeed: 10
   firerate: 2
