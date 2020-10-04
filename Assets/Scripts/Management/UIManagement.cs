@@ -7,8 +7,9 @@ public class UIManagement : MonoBehaviour
     // Start is called before the first frame update
     public static UIManagement instance;
 
-    public GameObject LoseDashBoard;
-    public GameObject WinDashBoard;
+    public GameObject DashBoard;
+    public GameObject WinText;
+    public GameObject LoseText;
     public ScoreControl m_MainScore;
     public ScoreControl m_DBScore;
     public ScoreControl m_DBBestScore;
@@ -43,10 +44,11 @@ public class UIManagement : MonoBehaviour
         
     }
     
-    public void SetupControl(bool isStartGame, bool isWin)
+    public void SetupControl(bool isLose, bool isWin, bool isStartGame)
     {
-        LoseDashBoard.SetActive(!isStartGame);
-        WinDashBoard.SetActive(isWin);
+        DashBoard.SetActive(!isStartGame);
+        LoseText.SetActive(isLose);
+        WinText.SetActive(isWin);
         //Debug.Log(!isStartGame);
     }
 }

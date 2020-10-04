@@ -29,6 +29,7 @@ public class GameManagement : Singleton<GameManagement>
 
     public bool isStartGame = false;
     public bool isWin = false;
+    public bool isLose = false;
     public ShipControl m_player;
     
     void Start()
@@ -47,6 +48,7 @@ public class GameManagement : Singleton<GameManagement>
         myHealthBar.value = m_hp;
 
         if (m_player.isDead){
+            isLose = true;
             isStartGame = false;
             SetupControl();
         }
@@ -61,7 +63,7 @@ public class GameManagement : Singleton<GameManagement>
         score += (int)(10 * factor);
     }
     void SetupControl(){
-        UIManagement.instance.SetupControl(isStartGame, isWin);
+        UIManagement.instance.SetupControl(isLose, isWin, isStartGame);
         UIManagement.instance.SetScore(score, isStartGame);
         
     }
