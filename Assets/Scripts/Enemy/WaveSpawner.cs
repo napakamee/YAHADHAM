@@ -21,15 +21,16 @@ public class WaveSpawner : MonoBehaviour
     private int currentWaveNumber;
     private float nextSpawnTime;
     private bool canSpawn = true;
-
+    private bool waveEnd = false;
     private Vector2 screenBounds;
 
-    void Start () {
+    void Start()
+    {
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         waveName.text = waves[currentWaveNumber].waveName;
     }
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         currentWave = waves[currentWaveNumber];
         SpawnWave();
@@ -38,18 +39,18 @@ public class WaveSpawner : MonoBehaviour
         {
             if (currentWaveNumber + 1 != waves.Length)
             {
-                //Debug.Log("wave : " + currentWaveNumber);
-                //Debug.Log(waves.Length);
-                SpawnNextWave();
-                waveName.text = waves[currentWaveNumber].waveName;
+                if (waveEnd)
+                {
+                    SpawnNextWave();
+                    waveName.text = waves[currentWaveNumber].waveName;
+                    waveEnd = false;
+                }
             }
-            /*if ( currentWaveNumber == 0 && !canSpawn)
+            else
             {
-                Debug.Log("GameFinish");
-                
-            }*/
+                Debug.Log("You Win!");
+            }
         }
-        
     }
     void SpawnNextWave()
     {
@@ -67,10 +68,11 @@ public class WaveSpawner : MonoBehaviour
             Instantiate(randomEnemy);
             currentWave.noOfEnemies--;
             nextSpawnTime = Time.time + currentWave.spawnInterval;
-            
+
             if (currentWave.noOfEnemies == 0)
             {
                 canSpawn = false;
+                waveEnd = true;
             }
         }
     }

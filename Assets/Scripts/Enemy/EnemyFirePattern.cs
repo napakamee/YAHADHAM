@@ -77,7 +77,7 @@ public class EnemyFirePattern : MonoBehaviour
         }
 
         // Define an "infinite" size, not too big but enough to go off screen
-        float maxLaserSize = 20f;
+        float maxLaserSize = 25f;
         float currentLaserSize = maxLaserSize;
 
         // Raycast at the right as our sprite has been design for that

@@ -13,6 +13,7 @@ public class ShipControl : MonoBehaviour
     Rigidbody2D m_Rigid;
     private Vector2 screenBounds;
     private bool isFiring = false;
+    public bool isDead = false;
     public bool IsFiring
     {
         get { return isFiring; }
@@ -50,12 +51,14 @@ public class ShipControl : MonoBehaviour
     public AudioClip collectSound;
     public AudioClip changeModeSound;
 
+    public GameObject explodeParticle;
 
     //public Slider healthBar;
 
     // Start is called before the first frame update
     void Start()
     {
+        isDead = false;
         m_Rigid = GetComponent<Rigidbody2D>();
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
         touchPos = Camera.main.ScreenToWorldPoint(touch.position);
@@ -131,6 +134,9 @@ public class ShipControl : MonoBehaviour
                 Shoot();
             }
         }
+
+        if (GameManagement.Instance.m_hp <= 0)
+            PlayerDead();
     }
     void FixedUpdate()
     {
@@ -139,6 +145,13 @@ public class ShipControl : MonoBehaviour
 
         float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
         m_Rigid.rotation = angle;
+    }
+
+    void PlayerDead()
+    {
+        Destroy(this.gameObject);
+        GameObject expl = Instantiate(explodeParticle, transform.position, Quaternion.identity) as GameObject;
+        isDead = true;
     }
     void Shoot()
     {
@@ -224,7 +237,7 @@ public class ShipControl : MonoBehaviour
             Debug.Log("Bullet Speed is Fully Upgraded(5).");
         }
 
-this.GetComponent<AudioSource>().PlayOneShot(collectSound);
+        this.GetComponent<AudioSource>().PlayOneShot(collectSound);
     }
     public void PickMaxHPUpgrade()
     {

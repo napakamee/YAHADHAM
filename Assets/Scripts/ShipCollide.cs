@@ -39,7 +39,7 @@ public class ShipCollide : MonoBehaviour
             }
             //Debug.Log("Laser Hit.");
 
-            GameManagement.Instance.m_hp -= 3 * Time.deltaTime;
+            GameManagement.Instance.m_hp -= 10 * Time.deltaTime;
         }
     }
 }

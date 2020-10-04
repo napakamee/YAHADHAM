@@ -5,7 +5,7 @@ using MyBox;
 
 public class Enemy01 : MonoBehaviour
 {
-    
+
     [Separator("Behavior")]
     [SerializeField] bool isFollowPlayer;
     [ConditionalField(nameof(isFollowPlayer))] [SerializeField] Transform player;
@@ -17,7 +17,7 @@ public class Enemy01 : MonoBehaviour
     public float speed = 3.0f;
     public float damage = 5f;
     public float hp = 3;
-
+    public int getScore = 10;
     public GameObject explosion;
     private Rigidbody2D rb;
     private Vector2 screenBounds;
@@ -47,19 +47,23 @@ public class Enemy01 : MonoBehaviour
         if (other.GetComponent<Collider2D>().tag.Contains("Bullet"))
         {
             GameObject expl = Instantiate(explosion, transform.position, Quaternion.identity) as GameObject;
-            hp--;
+            hp -= GameManagement.Instance.BulletDamage;
             Destroy(other.gameObject);
-            Destroy(expl,1);
-            
+            Destroy(expl, 1);
+
             if (hp <= 0)
+            {
+                GameManagement.Instance.Score += getScore;
                 Destroy(this.gameObject);
+            }
+
 
         }
         if (other.GetComponent<Collider2D>().tag.Contains("Player") && !isLaser)
         {
             GameObject expl = Instantiate(explosion, transform.position, Quaternion.identity) as GameObject;
             GameManagement.Instance.m_hp -= damage;
-            Destroy(expl,1);
+            Destroy(expl, 1);
             Destroy(this.gameObject);
         }
 
