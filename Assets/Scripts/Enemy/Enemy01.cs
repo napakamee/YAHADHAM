@@ -38,8 +38,8 @@ public class Enemy01 : MonoBehaviour
             rb.velocity = new Vector2(-randSpeed, 0);
         }
 
-
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        if (GameManagement.Instance.isStartGame)
+            player = GameObject.FindGameObjectWithTag("Player").transform;
 
     }
     private void OnTriggerEnter2D(Collider2D other)
@@ -70,12 +70,16 @@ public class Enemy01 : MonoBehaviour
     }
     void Update()
     {
-        //print ("obj" + transform.position.x);
-        //print ("scr" + screenBounds.x * 2);
         if (transform.position.x < screenBounds.x * -1.2)
             Destroy(this.gameObject);
 
-        if (isFollowPlayer)
-            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+        if (GameManagement.Instance.isStartGame)
+        {
+
+
+            if (isFollowPlayer)
+                transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+        }
+
     }
 }
