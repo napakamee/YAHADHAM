@@ -52,6 +52,7 @@ public class ShipControl : MonoBehaviour
     public AudioClip changeModeSound;
 
     public GameObject explodeParticle;
+    public GameObject Crosshair;
 
     //public Slider healthBar;
 
@@ -150,6 +151,7 @@ public class ShipControl : MonoBehaviour
     void PlayerDead()
     {
         Destroy(this.gameObject);
+        Destroy(Crosshair.gameObject);
         GameObject expl = Instantiate(explodeParticle, transform.position, Quaternion.identity) as GameObject;
         isDead = true;
     }

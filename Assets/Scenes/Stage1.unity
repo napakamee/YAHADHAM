@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 48161389}
   - component: {fileID: 48161390}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: =====Canvas=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -951,7 +951,7 @@ GameObject:
   - component: {fileID: 630540836}
   - component: {fileID: 630540835}
   m_Layer: 5
-  m_Name: ScoreCanvas
+  m_Name: =====ScoreCanvas=====
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3121,6 +3121,7 @@ MonoBehaviour:
   changeModeSound: {fileID: 8300000, guid: 3b08e4c01d90ffb48a6be60cb258a8eb, type: 3}
   explodeParticle: {fileID: 572109100967416453, guid: 172043a71bfd11c4fb44d13af454f17d,
     type: 3}
+  Crosshair: {fileID: 1127957669}
 --- !u!50 &1704431551
 Rigidbody2D:
   serializedVersion: 4
@@ -3972,6 +3973,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Buttons
       objectReference: {fileID: 0}
+    - target: {fileID: 495769746605118072, guid: a359b1076d08ec24ba4dd55879154ffd,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1320779458}
+    - target: {fileID: 495769746605118072, guid: a359b1076d08ec24ba4dd55879154ffd,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 495769746605118078, guid: a359b1076d08ec24ba4dd55879154ffd,
+        type: 3}
+      propertyPath: m_Name
+      value: RestartButton
+      objectReference: {fileID: 0}
     - target: {fileID: 495769746605118079, guid: a359b1076d08ec24ba4dd55879154ffd,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -4041,6 +4057,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2534756184016032466, guid: a359b1076d08ec24ba4dd55879154ffd,
+        type: 3}
+      propertyPath: m_Name
+      value: NextButton
       objectReference: {fileID: 0}
     - target: {fileID: 3336396921637593397, guid: a359b1076d08ec24ba4dd55879154ffd,
         type: 3}

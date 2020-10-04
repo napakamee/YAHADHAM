@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-public class GameManagement : Singleton<GameManagement>
+public class GameManagement : MonoBehaviour
 {
-    protected GameManagement() {}
+    //protected GameManagement() {}
 
     [SerializeField]
     private int score = 0;
@@ -22,6 +22,7 @@ public class GameManagement : Singleton<GameManagement>
     }    
     [SerializeField] public float m_hp = 100;
     public Slider myHealthBar;
+    public static GameManagement Instance = null;
     public float Max_HP = 100;
     public float fireRate = 0.5f;
     public float bulletForce = 2f;
@@ -31,7 +32,12 @@ public class GameManagement : Singleton<GameManagement>
     public bool isWin = false;
     public bool isLose = false;
     public ShipControl m_player;
-    
+    void Awake()
+    {
+        if(Instance == null)
+            Instance = this;
+        
+    }
     void Start()
     {
         myHealthBar.maxValue = Max_HP;
@@ -70,6 +76,8 @@ public class GameManagement : Singleton<GameManagement>
 
     public void ResetLevel()
     {
-        SceneManager.LoadScene("MainGame");
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.UnloadSceneAsync(scene.name);
+        SceneManager.LoadScene(scene.name);
     }
 }
