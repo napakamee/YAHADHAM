@@ -48,7 +48,12 @@ public class WaveSpawner : MonoBehaviour
             }
             else
             {
-                Debug.Log("You Win!");
+                if (GameManagement.Instance.isStartGame){
+                    Debug.Log("You Win!");
+                    GameManagement.Instance.isWin = true;
+                    
+                }
+                    
             }
         }
     }

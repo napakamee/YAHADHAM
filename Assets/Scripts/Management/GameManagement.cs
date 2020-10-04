@@ -28,7 +28,7 @@ public class GameManagement : Singleton<GameManagement>
     public float BulletDamage = 1f;
 
     public bool isStartGame = false;
-
+    public bool isWin = false;
     public ShipControl m_player;
     
     void Start()
@@ -39,7 +39,7 @@ public class GameManagement : Singleton<GameManagement>
     }
     void Update()
     {
-        if (m_hp >= 0)
+        if (m_hp >= 0 && !isWin)
         {
             m_hp -= Time.deltaTime;
             //print("hp: " + m_hp);
@@ -50,13 +50,18 @@ public class GameManagement : Singleton<GameManagement>
             isStartGame = false;
             SetupControl();
         }
+        if (isWin){
+            isStartGame = false;
+            SetupControl();
+            
+        }
     }
 
     public void PlusScore(float factor){
         score += (int)(10 * factor);
     }
     void SetupControl(){
-        UIManagement.instance.SetupControl(isStartGame);
+        UIManagement.instance.SetupControl(isStartGame, isWin);
         UIManagement.instance.SetScore(score, isStartGame);
         
     }
