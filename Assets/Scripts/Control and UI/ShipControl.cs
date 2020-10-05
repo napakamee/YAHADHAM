@@ -144,7 +144,7 @@ public class ShipControl : MonoBehaviour
         crosshairPos = _crosshairPos.position;
         Vector2 lookDir = crosshairPos - m_Rigid.position;
 
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
         m_Rigid.rotation = angle;
     }
 
@@ -157,10 +157,10 @@ public class ShipControl : MonoBehaviour
     }
     void Shoot()
     {
-        GameObject bl = Instantiate(m_Bullet, firePoint.position, firePoint.rotation);
+        GameObject bl = Instantiate(m_Bullet, firePoint.position, firePoint.rotation * Quaternion.Euler(0,0,90));
         Rigidbody2D rb_bl = bl.GetComponent<Rigidbody2D>();
 
-        rb_bl.AddForce(firePoint.up * GameManagement.Instance.bulletForce / 20, ForceMode2D.Force);
+        rb_bl.AddForce(firePoint.right * GameManagement.Instance.bulletForce / 20, ForceMode2D.Force);
         this.GetComponent<AudioSource>().PlayOneShot(fireSound);
     }
 

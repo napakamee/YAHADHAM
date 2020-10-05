@@ -40,8 +40,8 @@ public class GrapplingHook : MonoBehaviour
 
     public void Shoot()
     {
-        GameObject HookIns = Instantiate(Hook, HookGunPos.position, HookGunPos.transform.rotation * Quaternion.Euler(0, 0, 90));
-        HookIns.GetComponent<Rigidbody2D>().AddForce(transform.up * HookShotSpeed);
+        GameObject HookIns = Instantiate(Hook, HookGunPos.position, HookGunPos.transform.rotation * Quaternion.Euler(0, 0, 0));
+        HookIns.GetComponent<Rigidbody2D>().AddForce(transform.right * HookShotSpeed);
         traget = HookIns;
         Shot = true;
         this.GetComponent<AudioSource>().PlayOneShot(hookSound);
