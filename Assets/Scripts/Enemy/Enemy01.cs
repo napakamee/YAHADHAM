@@ -19,6 +19,7 @@ public class Enemy01 : MonoBehaviour
     public float hp = 3;
     public int getScore = 10;
     public GameObject explosion;
+    public GameObject bigExplode;
     private Rigidbody2D rb;
     private Vector2 screenBounds;
     // Start is called before the first frame update
@@ -53,17 +54,19 @@ public class Enemy01 : MonoBehaviour
 
             if (hp <= 0)
             {
+                GameObject b_expl = Instantiate(bigExplode, transform.position, Quaternion.identity) as GameObject;
                 GameManagement.Instance.Score += getScore;
                 Destroy(this.gameObject);
+                Destroy(b_expl,2);
             }
 
 
         }
         if (other.GetComponent<Collider2D>().tag.Contains("Player") && !isLaser)
         {
-            GameObject expl = Instantiate(explosion, transform.position, Quaternion.identity) as GameObject;
+            GameObject b_expl = Instantiate(bigExplode, transform.position, Quaternion.identity) as GameObject;
             GameManagement.Instance.m_hp -= damage;
-            Destroy(expl, 1);
+            Destroy(b_expl,2);
             Destroy(this.gameObject);
         }
 
@@ -75,8 +78,6 @@ public class Enemy01 : MonoBehaviour
 
         if (GameManagement.Instance.isStartGame)
         {
-
-
             if (isFollowPlayer)
                 transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
         }
