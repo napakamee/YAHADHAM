@@ -666,7 +666,7 @@ Transform:
   - {fileID: 1199429260}
   - {fileID: 808266909}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &246727249 stripped
 Transform:
@@ -2045,7 +2045,7 @@ Transform:
   m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &1127957673
 CharacterController:
@@ -2853,7 +2853,7 @@ Transform:
   - {fileID: 582474990}
   - {fileID: 1600545538}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1369337090
 PrefabInstance:
@@ -3483,13 +3483,11 @@ GameObject:
   - component: {fileID: 1704431550}
   - component: {fileID: 1704431551}
   - component: {fileID: 1704431553}
-  - component: {fileID: 1704431552}
   - component: {fileID: 1704431554}
   - component: {fileID: 1704431555}
   - component: {fileID: 1704431556}
   - component: {fileID: 1704431557}
   - component: {fileID: 1704431558}
-  - component: {fileID: 1704431559}
   - component: {fileID: 1704431560}
   m_Layer: 8
   m_Name: Player
@@ -3564,7 +3562,7 @@ Transform:
   - {fileID: 1100231749}
   - {fileID: 189166446}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1704431550
 MonoBehaviour:
@@ -3625,22 +3623,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &1704431552
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1704431547}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.13615191}
-  serializedVersion: 2
-  m_Radius: 1.2638481
 --- !u!114 &1704431553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3900,25 +3882,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!95 &1704431559
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1704431547}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f8a755a4d563cec41b6fa0d8cda4c4e8, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!70 &1704431560
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

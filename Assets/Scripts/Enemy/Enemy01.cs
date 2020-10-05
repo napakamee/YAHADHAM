@@ -47,29 +47,38 @@ public class Enemy01 : MonoBehaviour
     {
         if (other.GetComponent<Collider2D>().tag.Contains("Bullet"))
         {
-            GameObject expl = Instantiate(explosion, transform.position, Quaternion.identity) as GameObject;
-            hp -= GameManagement.Instance.BulletDamage;
-            Destroy(other.gameObject);
-            Destroy(expl, 1);
-
-            if (hp <= 0)
-            {
-                GameObject b_expl = Instantiate(bigExplode, transform.position, Quaternion.identity) as GameObject;
-                GameManagement.Instance.Score += getScore;
-                Destroy(this.gameObject);
-                Destroy(b_expl,2);
-            }
-
-
+            HitByBullet(other);
         }
+
         if (other.GetComponent<Collider2D>().tag.Contains("Player") && !isLaser)
         {
-            GameObject b_expl = Instantiate(bigExplode, transform.position, Quaternion.identity) as GameObject;
-            GameManagement.Instance.m_hp -= damage;
-            Destroy(b_expl,2);
-            Destroy(this.gameObject);
+            HitByPlayer(other);
         }
 
+    }
+
+    void HitByBullet(Collider2D other)
+    {
+        GameObject expl = Instantiate(explosion, transform.position, Quaternion.identity) as GameObject;
+        hp -= GameManagement.Instance.BulletDamage;
+        Destroy(other.gameObject);
+        Destroy(expl, 1);
+
+        if (hp <= 0)
+        {
+            GameObject b_expl = Instantiate(bigExplode, transform.position, Quaternion.identity) as GameObject;
+            GameManagement.Instance.Score += getScore;
+            Destroy(this.gameObject);
+            Destroy(b_expl, 2);
+        }
+    }
+
+    void HitByPlayer(Collider2D other)
+    {
+        GameObject b_expl = Instantiate(bigExplode, transform.position, Quaternion.identity) as GameObject;
+        GameManagement.Instance.m_hp -= damage;
+        Destroy(b_expl, 2);
+        Destroy(this.gameObject);
     }
     void Update()
     {
