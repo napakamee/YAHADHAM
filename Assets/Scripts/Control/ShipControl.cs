@@ -166,13 +166,13 @@ public class ShipControl : MonoBehaviour
 
     public void PickDamageUpgrade()
     {
-        if (GameManagement.Instance.BulletDamage < 6)
+        if (GameManagement.Instance.BulletDamage < 4.5f)
         {
-            GameManagement.Instance.BulletDamage += 1;
+            GameManagement.Instance.BulletDamage += 0.5f;
 
-            if (GameManagement.Instance.BulletDamage > 6)
+            if (GameManagement.Instance.BulletDamage > 4.5f)
             {
-                GameManagement.Instance.BulletDamage = 6;
+                GameManagement.Instance.BulletDamage = 4.5f;
 
             }
 
