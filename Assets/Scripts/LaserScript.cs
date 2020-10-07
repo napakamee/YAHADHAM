@@ -15,7 +15,12 @@ public class LaserScript : MonoBehaviour
 
   void Update()
   {
-    if (start == null)
+        LaserFire();
+    }
+
+    private void LaserFire()
+    {
+        if (start == null)
         {
             start = Instantiate(laserStart) as GameObject;
             start.transform.parent = this.transform;
@@ -31,30 +36,30 @@ public class LaserScript : MonoBehaviour
         }
 
         // Define an "infinite" size, not too big but enough to go off screen
-        float maxLaserSize = 20f;
+        float maxLaserSize = 25f;
         float currentLaserSize = maxLaserSize;
 
         // Raycast at the right as our sprite has been design for that
         Vector2 laserDirection = this.transform.up;
         Debug.DrawRay(transform.position, laserDirection, Color.green);
-        RaycastHit2D hit = Physics2D.Raycast(this.transform.position, laserDirection, maxLaserSize);
+        RaycastHit2D hit = Physics2D.Raycast(this.transform.position, laserDirection, maxLaserSize, 1 << LayerMask.NameToLayer("Player"));
 
         if (hit.collider != null)
         {
             // We touched something!
-            if (hit.collider.gameObject.CompareTag("Player"))
-            {
-                // -- Get the laser length
-                currentLaserSize = Vector2.Distance(hit.point, this.transform.position);
+            //if (hit.collider.gameObject.CompareTag("Player"))
+            // {
+            // -- Get the laser length
+            currentLaserSize = Vector2.Distance(hit.point, this.transform.position);
 
-                // -- Create the end sprite
-                if (end == null)
-                {
-                    end = Instantiate(laserEnd) as GameObject;
-                    end.transform.parent = this.transform;
-                    end.transform.localPosition = Vector2.zero;
-                }
+            // -- Create the end sprite
+            if (end == null)
+            {
+                end = Instantiate(laserEnd) as GameObject;
+                end.transform.parent = this.transform;
+                end.transform.localPosition = Vector2.zero;
             }
+            //}
 
         }
         else
@@ -79,5 +84,6 @@ public class LaserScript : MonoBehaviour
         {
             end.transform.localPosition = new Vector2(0f, currentLaserSize);
         }
-  }
+    }
+
 }

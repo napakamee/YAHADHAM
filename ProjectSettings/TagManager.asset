@@ -60,21 +60,18 @@ TagManager:
   - name: Planets
     uniqueID: 4094135763
     locked: 0
-  - name: Projectile
-    uniqueID: 1111697911
-    locked: 0
-  - name: Enemy
-    uniqueID: 1152134415
-    locked: 0
   - name: Bonus
     uniqueID: 689362467
     locked: 0
-  - name: Player
-    uniqueID: 2402381985
+  - name: Projectile
+    uniqueID: 1111697911
     locked: 0
   - name: VFX
     uniqueID: 738997965
     locked: 0
   - name: Enemy
     uniqueID: 3156208393
+    locked: 0
+  - name: Player
+    uniqueID: 2402381985
     locked: 0
