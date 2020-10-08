@@ -9,15 +9,15 @@ public class BackgroundManager : MonoBehaviour
     [SerializeField] GameObject nebulaSprite1;
     [SerializeField] GameObject nebulaSprite2;
     [SerializeField] Vector3 nebulaRespawnPoint;
-    [SerializeField] float nebulaSpriteSpeed;
+    [SerializeField] float nebulaSpriteSpeed= 0;
     
    [Space(2)]
 
     [Header("Planet Sprites")]
     [SerializeField] GameObject[] PlanetSprites;
-    [SerializeField] float PlanetsSpawner;
-    [SerializeField] float PlanetsRespawnPoint;
-    [SerializeField] float PlanetsSpriteSpeed;
+    [SerializeField] float PlanetsSpawner = 0;
+    [SerializeField] float PlanetsRespawnPoint= 0;
+    [SerializeField] float PlanetsSpriteSpeed= 0;
 
     private void Update()
     {
