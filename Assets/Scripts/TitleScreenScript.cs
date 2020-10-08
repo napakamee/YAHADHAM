@@ -15,7 +15,7 @@ public class TitleScreenScript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.touchCount > 0)
+        if (Input.touchCount > 0 || Input.anyKeyDown)
         {
             _isTitleActive = false;
         }
