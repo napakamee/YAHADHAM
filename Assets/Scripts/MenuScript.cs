@@ -6,17 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
-    [SerializeField] GameObject[] UIs;
-    [SerializeField] GameObject Player;
+    [SerializeField] GameObject[] UIs = null;
+    [SerializeField] GameObject Player = null;
     Vector3[] UIs_pos;
     Vector3 Player_pos;
     string sceneToLoad = "";
     bool transitioningOut = false;
 
     bool isCalledScene = false;
+    bool isCallingScene = false;
 
     private void Awake()
     {
+        sceneToLoad = null;
+        isCallingScene = false;
+        isCalledScene = false;
         transitioningOut = false;
         UIs_pos = new Vector3[UIs.Length];
         for (int i = 0; i < UIs.Length; i++)
@@ -96,22 +100,38 @@ public class MenuScript : MonoBehaviour
 
     public void LoadStagesSelect()
     {
-        transitioningOut = true;
-        sceneToLoad = "StageSelect";
+        if (!isCallingScene)
+        {
+            transitioningOut = true;
+            sceneToLoad = "StageSelect";
+            isCallingScene = true;
+        }
     }
     public void LoadOptions()
     {
-        transitioningOut = true;
-        sceneToLoad = "Options";
+        if (!isCallingScene)
+        {
+            transitioningOut = true;
+            sceneToLoad = "Options";
+            isCallingScene = true;
+        }
     }
     public void LoadCredits()
     {
-        transitioningOut = true;
-        sceneToLoad = "Credits";
+        if (!isCallingScene)
+        {
+            transitioningOut = true;
+            sceneToLoad = "Credits";
+            isCallingScene = true;
+        }
     }
     public void QuitGame()
     {
-        transitioningOut = true;
-        sceneToLoad = "Quit";
+        if (!isCallingScene)
+        {
+            transitioningOut = true;
+            sceneToLoad = "Quit";
+            isCallingScene = true;
+        }
     }
 }
