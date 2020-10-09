@@ -18,7 +18,9 @@ public class FadeOffAction : MonoBehaviour
     }
     public void OnFadeComplete()
     {
-        SceneManager.LoadScene(sceneToLoad, LoadSceneMode.Single);
+        if (sceneToLoad != null && sceneToLoad != "Quit"){
+            SceneManager.LoadScene(sceneToLoad, LoadSceneMode.Single);
+        }
     }
     public void FadeOff()
     {

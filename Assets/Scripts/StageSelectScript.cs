@@ -61,4 +61,8 @@ public class StageSelectScript : MonoBehaviour
             isCallingScene = true;
         }
     }
+    public void LoadMainmenu()
+    {
+        //Leave This Blank
+    }
 }

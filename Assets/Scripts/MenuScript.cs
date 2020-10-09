@@ -15,6 +15,7 @@ public class MenuScript : MonoBehaviour
 
     bool isCalledScene = false;
     bool isCallingScene = false;
+    [SerializeField] FadeOffAction fadeOffAction;
 
     private void Awake()
     {
@@ -81,8 +82,16 @@ public class MenuScript : MonoBehaviour
 
         if (UIs[UIs.Length - 1].transform.position.x <= (UIs_pos[UIs_pos.Length - 1].x - (180f * 0.33f) - 180f) + 2 && !isCalledScene)
         {
-            SceneManager.LoadScene(SceneToLoad, LoadSceneMode.Additive);
-            isCalledScene = true;
+            if (sceneToLoad == "Quit")
+            {
+                fadeOffAction.FadeOff();
+                SoundManagerSingleton.Instance.MasterVolume -= Time.deltaTime * 100;
+            }
+            else
+            {
+                SceneManager.LoadScene(SceneToLoad, LoadSceneMode.Additive);
+                isCalledScene = true;
+            }
         }
 
         if (UIs[UIs.Length - 1].transform.position.x <= (UIs_pos[UIs_pos.Length - 1].x - (230f * 0.33f) - 230f) + 2)
