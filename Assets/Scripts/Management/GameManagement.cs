@@ -80,4 +80,15 @@ public class GameManagement : MonoBehaviour
         SceneManager.UnloadSceneAsync(scene.name);
         SceneManager.LoadScene(scene.name);
     }
+
+    public void ChangeStage(){
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.UnloadSceneAsync(scene.name);
+        if (scene.name == "Stage1")
+            SceneManager.LoadScene("Stage2");
+        if (scene.name == "Stage2")
+            SceneManager.LoadScene("Stage3");
+        if (scene.name == "Stage3")
+            SceneManager.LoadScene("MainmenuBackground");
+    }
 }
