@@ -13,6 +13,16 @@ public class TitleScreenScript : MonoBehaviour
     float blinkValue = 1f;
     Color textBlink = new Color(1, 1, 1, 1);
 
+    private void Awake() {
+        if (SceneManagementSingleton.Instance.isQuitingStage)
+        {
+            _isTitleActive = false;
+            SceneManagementSingleton.Instance.isQuitingStage = false;
+            SceneManager.LoadScene("StageSelect", LoadSceneMode.Additive);
+            gameObject.SetActive(false);
+        }
+    }
+
     private void Update()
     {
         if (Input.touchCount > 0 || Input.anyKeyDown)
