@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -3784265021601901480}
   - component: {fileID: 7698492086516797673}
   - component: {fileID: -855568378762175695}
+  - component: {fileID: 2161292499664913352}
   m_Layer: 9
   m_Name: Enemy_00
   m_TagString: Enemy
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2489472318681787456}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 20, y: -1.0532365, z: 0}
+  m_LocalPosition: {x: 20, y: 1.9154261, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -139,12 +140,36 @@ MonoBehaviour:
   isLaser: 0
   minSpeed: 3
   maxSpeed: 5
-  randSpeed: 0
+  randSpeed: 3
   speed: 3
   damage: 5
-  hp: 2
+  hp: 3
   getScore: 10
   explosion: {fileID: 572109100967416453, guid: 309b57b706d3f2947b9f23566f5bd80e,
     type: 3}
   bigExplode: {fileID: 572109100967416453, guid: 172043a71bfd11c4fb44d13af454f17d,
     type: 3}
+--- !u!114 &2161292499664913352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2489472318681787456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0426c15e8dbd1754d8d5b063369515d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 9181984642786646354, guid: 8dd9bcf342d98194bb191f881a12df55, type: 3}
+  normalFire: 0
+  isSpread: 0
+  bulletAmount: 3
+  startAngle: 90
+  endAngle: 270
+  isLaser: 0
+  laserStart: {fileID: 0}
+  laserMiddle: {fileID: 0}
+  laserEnd: {fileID: 0}
+  bulletSpeed: 10
+  firerate: 2

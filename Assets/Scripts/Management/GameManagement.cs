@@ -17,9 +17,9 @@ public class GameManagement : MonoBehaviour
             //SetScore(value);
             score = value;
             UIManagement.instance.SetScore(score, isStartGame);
-            
+
         }
-    }    
+    }
     [SerializeField] public float m_hp = 100;
     public Slider myHealthBar;
     public static GameManagement Instance = null;
@@ -32,11 +32,14 @@ public class GameManagement : MonoBehaviour
     public bool isWin = false;
     public bool isLose = false;
     public ShipControl m_player;
+
+    [SerializeField] FadeOffAction fadeOffAction;
+    [SerializeField] Animator animator;
     void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
             Instance = this;
-        
+
     }
     void Start()
     {
@@ -53,25 +56,29 @@ public class GameManagement : MonoBehaviour
         }
         myHealthBar.value = m_hp;
 
-        if (m_player.isDead){
+        if (m_player.isDead)
+        {
             isLose = true;
             isStartGame = false;
             SetupControl();
         }
-        if (isWin){
+        if (isWin)
+        {
             isStartGame = false;
             SetupControl();
-            
+
         }
     }
 
-    public void PlusScore(float factor){
+    public void PlusScore(float factor)
+    {
         score += (int)(10 * factor);
     }
-    void SetupControl(){
+    void SetupControl()
+    {
         UIManagement.instance.SetupControl(isLose, isWin, isStartGame);
         UIManagement.instance.SetScore(score, isStartGame);
-        
+
     }
 
     public void ResetLevel()
@@ -81,14 +88,18 @@ public class GameManagement : MonoBehaviour
         SceneManager.LoadScene(scene.name);
     }
 
-    public void ChangeStage(){
+    public void ChangeStage()
+    {
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.UnloadSceneAsync(scene.name);
-        if (scene.name == "Stage1")
-            SceneManager.LoadScene("Stage2");
-        if (scene.name == "Stage2")
-            SceneManager.LoadScene("Stage3");
-        if (scene.name == "Stage3")
-            SceneManager.LoadScene("MainmenuBackground");
+        ReturnToStageSelect();
+    }
+
+    public void ReturnToStageSelect()
+    {
+        Time.timeScale = 1;
+        SceneManagementSingleton.Instance.isQuitingStage = true;
+        fadeOffAction.SceneToLoad = "MainmenuBackground";
+        animator.SetTrigger("FadeOff");
     }
 }

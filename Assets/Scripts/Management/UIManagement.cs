@@ -10,6 +10,7 @@ public class UIManagement : MonoBehaviour
     public GameObject DashBoard;
     public GameObject WinText;
     public GameObject LoseText;
+    public GameObject nextButton;
     public ScoreControl m_MainScore;
     public ScoreControl m_DBScore;
     public ScoreControl m_DBBestScore;
@@ -49,6 +50,7 @@ public class UIManagement : MonoBehaviour
         DashBoard.SetActive(!isStartGame);
         LoseText.SetActive(isLose);
         WinText.SetActive(isWin);
+        nextButton.SetActive(isWin);
         //Debug.Log(!isStartGame);
     }
 }

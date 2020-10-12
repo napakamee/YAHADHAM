@@ -69,9 +69,9 @@ public class MenuScript : MonoBehaviour
     {
         for (int i = 0; i < UIs.Length; i++)
         {
-            if (UIs[i].transform.position.x > (UIs_pos[i].x - (230f * 0.33f * (UIs.Length - i)) - 230f) + 2)
+            if (UIs[i].transform.position.x > (UIs_pos[i].x - (230f * 0.33f * (UIs.Length - i)) - 800) + 2)
             {
-                UIs[i].transform.position -= new Vector3(Mathf.Abs(UIs[i].transform.position.x - (UIs_pos[i].x - (230f * 0.33f * (UIs.Length - i)) - 230f)) / 10, 0, 0);
+                UIs[i].transform.position -= new Vector3(Mathf.Abs(UIs[i].transform.position.x - (UIs_pos[i].x - (230f * 0.33f * (UIs.Length - i)) - 800)) / 30, 0, 0);
             }
         }
 
@@ -94,7 +94,7 @@ public class MenuScript : MonoBehaviour
             }
         }
 
-        if (UIs[UIs.Length - 1].transform.position.x <= (UIs_pos[UIs_pos.Length - 1].x - (230f * 0.33f) - 230f) + 2)
+        if (UIs[UIs.Length - 1].transform.position.x <= (UIs_pos[UIs_pos.Length - 1].x - (230f * 0.33f) - 800f) + 2)
         {
             if (sceneToLoad == "Quit")
             {
