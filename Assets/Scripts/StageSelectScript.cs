@@ -11,8 +11,13 @@ public class StageSelectScript : MonoBehaviour
     bool isCallingScene = false;
     Animator animator;
     [SerializeField] FadeOffAction fadeOffAction;
+    [SerializeField] AudioSource sfxMaker;
+    [SerializeField] AudioClip lockedSound;
+    [SerializeField] AudioClip SelectedSound;
+
     private void Awake()
     {
+        sfxMaker = GetComponent<AudioSource>();
         sceneToLoad = null;
         isCallingScene = false;
         isCalledScene = false;
@@ -39,6 +44,8 @@ public class StageSelectScript : MonoBehaviour
                 }
             }
         }
+
+        
     }
 
     public void LoadOtherScene_Additive(string SceneToLoad)
@@ -53,16 +60,35 @@ public class StageSelectScript : MonoBehaviour
     }
     public void LoadOtherScene_Single(string SceneToLoad)
     {
-        if (!isCallingScene)
+        bool checkWhereIsLoading = false;
+        switch (SceneToLoad)
+        {
+            case "Stage1": checkWhereIsLoading = UnlockCondition.Instance.stage1Clear; break;
+            case "Stage2": checkWhereIsLoading = UnlockCondition.Instance.stage2Clear; break;
+            case "Stage3": checkWhereIsLoading = UnlockCondition.Instance.stage3Clear; break;
+            default: break;
+        }
+
+        if (!isCallingScene && checkWhereIsLoading)
         {
             sceneToLoad = SceneToLoad;
             loadType = 1;
             animator.SetBool("IsLoaded", false);
             isCallingScene = true;
+            sfxMaker.PlayOneShot(SelectedSound);
+        }
+        else if (!isCallingScene && !checkWhereIsLoading)
+        {
+            sfxMaker.PlayOneShot(lockedSound);
         }
     }
     public void LoadMainmenu()
     {
         //Leave This Blank
+    }
+
+    public void Unlock2Test()
+    {
+        UnlockCondition.Instance.stage2Clear = true;
     }
 }

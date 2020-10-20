@@ -64,9 +64,9 @@ public class GameManagement : MonoBehaviour
         }
         if (isWin)
         {
+            UnlockStage();
             isStartGame = false;
             SetupControl();
-
         }
     }
 
@@ -101,5 +101,14 @@ public class GameManagement : MonoBehaviour
         SceneManagementSingleton.Instance.isQuitingStage = true;
         fadeOffAction.SceneToLoad = "MainmenuBackground";
         animator.SetTrigger("FadeOff");
+    }
+    public void UnlockStage()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        switch (scene.name)
+        {
+            case "Stage1": UnlockCondition.Instance.stage2Clear = true; break;
+            case "Stage2": UnlockCondition.Instance.stage3Clear = true; break;
+        }
     }
 }

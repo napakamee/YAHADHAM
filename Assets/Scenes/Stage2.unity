@@ -524,7 +524,7 @@ SpriteRenderer:
   m_Size: {x: 20.48, y: 20.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &135038429 stripped
@@ -3102,9 +3102,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - waveName: Wave1
-    noOfEnemies: 1
+    noOfEnemies: 10
     typeOfEnemies:
-    - {fileID: 2489472318681787456, guid: d8217e5a5466f3247959d6f72437f95b, type: 3}
+    - {fileID: 2489472318681787456, guid: c84f436e19fdf00499d2a4de389bb90d, type: 3}
     spawnInterval: 3
   waveName: {fileID: 603713584}
 --- !u!4 &1606792256
