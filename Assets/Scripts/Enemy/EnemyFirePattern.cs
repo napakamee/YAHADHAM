@@ -7,8 +7,8 @@ public class EnemyFirePattern : MonoBehaviour
 {
     public GameObject bullet;
     [Separator("Behavior")]
-    [SerializeField] bool normalFire;
-    [SerializeField] bool isSpread;
+    [SerializeField] public bool normalFire;
+    [SerializeField] public bool isSpread;
     [ConditionalField(nameof(isSpread))] [SerializeField] int bulletAmount = 3;
     [ConditionalField(nameof(isSpread))] [SerializeField] float startAngle = 90f, endAngle = 270f;
 
