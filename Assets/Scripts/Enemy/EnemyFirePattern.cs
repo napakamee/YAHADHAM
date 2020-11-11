@@ -33,7 +33,7 @@ public class EnemyFirePattern : MonoBehaviour
 
         GameObject b = Instantiate(bullet) as GameObject;
         b.transform.position = this.transform.position;
-        b.transform.rotation = this.transform.rotation;
+        //b.transform.rotation = this.transform.rotation;
         b.GetComponent<Rigidbody2D>().velocity = new Vector2(-bulletSpeed, 0);
     }
 
@@ -52,7 +52,7 @@ public class EnemyFirePattern : MonoBehaviour
 
             GameObject b = Instantiate(bullet) as GameObject;
             b.transform.position = transform.position;
-            b.transform.rotation = transform.rotation;
+            //b.transform.rotation = transform.rotation;
             b.GetComponent<EnemyBullet>().SetMoveDirection(bulDir);
             //b.GetComponent<Rigidbody2D>();
             angle += angleStep;

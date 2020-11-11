@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityStandardAssets.CrossPlatformInput;
+//using UnityStandardAssets.CrossPlatformInput;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 public class ShipControl : MonoBehaviour
