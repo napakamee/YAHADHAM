@@ -8,8 +8,10 @@ public class MenuScript : MonoBehaviour
 {
     [SerializeField] GameObject[] UIs = null;
     [SerializeField] GameObject Player = null;
+    [SerializeField] GameObject HowToPlay = null;
     Vector3[] UIs_pos;
     Vector3 Player_pos;
+    Vector3 HowToPlay_pos;
     string sceneToLoad = "";
     bool transitioningOut = false;
 
@@ -30,6 +32,8 @@ public class MenuScript : MonoBehaviour
             UIs_pos[i] = UIs[i].transform.position;
         }
         Player_pos = Player.transform.position;
+        HowToPlay_pos = HowToPlay.transform.position;
+
     }
     private void Start()
     {
@@ -37,7 +41,8 @@ public class MenuScript : MonoBehaviour
         {
             UIs[i].transform.position = new Vector3((-220f * 0.33f * i) - 220f, UIs[i].transform.position.y, UIs[i].transform.position.z);
         }
-        Player.transform.position = new Vector3(20f, Player.transform.position.y, Player.transform.position.z); ;
+        Player.transform.position = new Vector3(20f, Player.transform.position.y, Player.transform.position.z);
+        HowToPlay.transform.position = new Vector3(HowToPlay.transform.position.x + 200, HowToPlay.transform.position.y, HowToPlay.transform.position.z);
     }
 
     private void Update()
@@ -64,6 +69,10 @@ public class MenuScript : MonoBehaviour
         {
             Player.transform.position -= new Vector3(Mathf.Abs(Player.transform.position.x - Player_pos.x) / 8f, 0, 0);
         }
+        if (HowToPlay.transform.position.x > HowToPlay_pos.x + 2)
+        {
+            HowToPlay.transform.position -= new Vector3(Mathf.Abs(HowToPlay.transform.position.x - HowToPlay_pos.x) / 10, 0, 0);
+        }
     }
     private void Transition_Out(string SceneToLoad)
     {
@@ -78,6 +87,10 @@ public class MenuScript : MonoBehaviour
         if (Player.transform.position.x < 20f - 2)
         {
             Player.transform.position += new Vector3(Mathf.Abs(Player.transform.position.x - 20f) / 8f, 0, 0);
+        }
+        if (HowToPlay.transform.position.x < HowToPlay_pos.x + 198)
+        {
+            HowToPlay.transform.position += new Vector3(Mathf.Abs(HowToPlay.transform.position.x - HowToPlay_pos.x + 200) / 10f, 0, 0);
         }
 
         if (UIs[UIs.Length - 1].transform.position.x <= (UIs_pos[UIs_pos.Length - 1].x - (180f * 0.33f) - 180f) + 2 && !isCalledScene)
@@ -140,6 +153,15 @@ public class MenuScript : MonoBehaviour
         {
             transitioningOut = true;
             sceneToLoad = "Quit";
+            isCallingScene = true;
+        }
+    }
+    public void LoadTutorials()
+    {
+        if (!isCallingScene)
+        {
+            transitioningOut = true;
+            sceneToLoad = "StageTutorial";
             isCallingScene = true;
         }
     }

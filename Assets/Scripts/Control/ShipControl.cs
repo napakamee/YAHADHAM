@@ -14,6 +14,7 @@ public class ShipControl : MonoBehaviour
     private Vector2 screenBounds;
     private bool isFiring = false;
     public bool isDead = false;
+    public bool godMode = false;
     public bool IsFiring
     {
         get { return isFiring; }
@@ -137,7 +138,13 @@ public class ShipControl : MonoBehaviour
         }
 
         if (GameManagement.Instance.m_hp <= 0)
-            PlayerDead();
+        {
+            if (!godMode)
+            {
+                PlayerDead();
+            }
+            else { GameManagement.Instance.m_hp = 100; }
+        }
     }
     void FixedUpdate()
     {
@@ -157,7 +164,7 @@ public class ShipControl : MonoBehaviour
     }
     void Shoot()
     {
-        GameObject bl = Instantiate(m_Bullet, firePoint.position, firePoint.rotation * Quaternion.Euler(0,0,90));
+        GameObject bl = Instantiate(m_Bullet, firePoint.position, firePoint.rotation * Quaternion.Euler(0, 0, 90));
         Rigidbody2D rb_bl = bl.GetComponent<Rigidbody2D>();
 
         rb_bl.AddForce(firePoint.right * GameManagement.Instance.bulletForce / 20, ForceMode2D.Force);

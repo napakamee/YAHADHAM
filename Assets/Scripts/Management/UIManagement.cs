@@ -15,7 +15,7 @@ public class UIManagement : MonoBehaviour
     public ScoreControl m_MainScore;
     public ScoreControl m_DBScore;
     public ScoreControl m_DBBestScore;
-    
+
 
     [SerializeField]
     private string m_KeySaveScore = "BestScore";
@@ -30,8 +30,10 @@ public class UIManagement : MonoBehaviour
     }
     public void SetScore(int score, bool isStartGame)
     {
-        m_MainScore.UpdateScore(score);
-
+        if (m_MainScore != null)
+        {
+            m_MainScore.UpdateScore(score);
+        }
         if (!isStartGame)
         {
             int m_bestScore = 0;
@@ -44,16 +46,25 @@ public class UIManagement : MonoBehaviour
             m_DBScore.UpdateScore(score);
             m_DBBestScore.UpdateScore(m_bestScore);
         }
-        
+
     }
-    
+
     public void SetupControl(bool isLose, bool isWin, bool isStartGame)
     {
         Tint.SetActive(!isStartGame);
-        DashBoard.SetActive(!isStartGame);
-        LoseText.SetActive(isLose);
-        WinText.SetActive(isWin);
-        nextButton.SetActive(isWin);
+        if (DashBoard != null)
+        {
+            DashBoard.SetActive(!isStartGame);
+        }
+        if (LoseText != null)
+        {
+            LoseText.SetActive(isLose);
+        }
+        if (WinText != null)
+        {
+            WinText.SetActive(isWin);
+            nextButton.SetActive(isWin);
+        }
         //Debug.Log(!isStartGame);
     }
 }

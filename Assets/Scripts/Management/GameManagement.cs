@@ -43,19 +43,24 @@ public class GameManagement : MonoBehaviour
     }
     void Start()
     {
-        myHealthBar.maxValue = Max_HP;
+        if (myHealthBar != null)
+        {
+            myHealthBar.maxValue = Max_HP;
+        }
         isStartGame = true;
         SetupControl();
     }
     void Update()
     {
-        if (m_hp >= 0 && !isWin)
+        if (m_hp >= 0 && !isWin && !m_player.godMode)
         {
             m_hp -= Time.deltaTime;
             //print("hp: " + m_hp);
         }
-        myHealthBar.value = m_hp;
-
+        if (myHealthBar != null)
+        {
+            myHealthBar.value = m_hp;
+        }
         if (m_player.isDead)
         {
             isLose = true;
@@ -78,7 +83,7 @@ public class GameManagement : MonoBehaviour
     {
         UIManagement.instance.SetupControl(isLose, isWin, isStartGame);
         UIManagement.instance.SetScore(score, isStartGame);
-
+        UnlockCondition.Instance.SaveFile();
     }
 
     public void ResetLevel()
@@ -110,5 +115,6 @@ public class GameManagement : MonoBehaviour
             case "Stage1": UnlockCondition.Instance.stage2Clear = true; break;
             case "Stage2": UnlockCondition.Instance.stage3Clear = true; break;
         }
+        UnlockCondition.Instance.SaveFile();
     }
 }

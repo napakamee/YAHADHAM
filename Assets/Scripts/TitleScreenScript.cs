@@ -13,8 +13,17 @@ public class TitleScreenScript : MonoBehaviour
     float blinkValue = 1f;
     Color textBlink = new Color(1, 1, 1, 1);
 
-    private void Awake() {
-        if (SceneManagementSingleton.Instance.isQuitingStage)
+    private void Awake()
+    {
+        if (SceneManagementSingleton.Instance.isQuitingTutorial)
+        {
+            _isTitleActive = false;
+            SceneManagementSingleton.Instance.isQuitingStage = false;
+            SceneManagementSingleton.Instance.isQuitingTutorial = false;
+            SceneManager.LoadScene("Mainmenu", LoadSceneMode.Additive);
+            gameObject.SetActive(false);
+        }
+        else if (SceneManagementSingleton.Instance.isQuitingStage)
         {
             _isTitleActive = false;
             SceneManagementSingleton.Instance.isQuitingStage = false;
@@ -40,9 +49,9 @@ public class TitleScreenScript : MonoBehaviour
                     pressToStart.color = textBlink;
                 }
             }
-            else {SceneManager.LoadScene("Mainmenu", LoadSceneMode.Additive); _loadedMenuScene = true; gameObject.SetActive(false); }
+            else { SceneManager.LoadScene("Mainmenu", LoadSceneMode.Additive); _loadedMenuScene = true; gameObject.SetActive(false); }
         }
-        else if(!_loadedMenuScene) TitleMode();
+        else if (!_loadedMenuScene) TitleMode();
     }
 
     private void TitleMode()

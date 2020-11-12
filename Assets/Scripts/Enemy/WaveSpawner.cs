@@ -27,7 +27,10 @@ public class WaveSpawner : MonoBehaviour
     void Start()
     {
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
-        waveName.text = waves[currentWaveNumber].waveName;
+        if (waveName != null)
+        {
+            waveName.text = waves[currentWaveNumber].waveName;
+        }
     }
     // Update is called once per frame
     private void Update()
@@ -48,12 +51,13 @@ public class WaveSpawner : MonoBehaviour
             }
             else
             {
-                if (GameManagement.Instance.isStartGame){
+                if (GameManagement.Instance.isStartGame)
+                {
                     Debug.Log("You Win!");
                     GameManagement.Instance.isWin = true;
-                    
+
                 }
-                    
+
             }
         }
     }
