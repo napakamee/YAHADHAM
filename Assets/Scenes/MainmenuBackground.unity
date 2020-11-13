@@ -358,6 +358,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: =====FadeOff Canvas=====
       objectReference: {fileID: 0}
+    - target: {fileID: 4404064062088903324, guid: 25b3276c63532114e9dd1813b1319969,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8979785336310508732, guid: 25b3276c63532114e9dd1813b1319969,
         type: 3}
       propertyPath: ActiveFadeIn

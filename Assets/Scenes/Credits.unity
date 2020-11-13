@@ -341,21 +341,17 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Core Coding
 
-    -
+    - Jintaphum  612110013
 
-    -
-
-    -
+    - Napakamee 612110048
 
 
     Artist
 
     -
+    Parichat 612110054
 
-    -
-
-    -
-
+    - Weenut 612110086
 
 '
 --- !u!222 &275446146
@@ -993,19 +989,19 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Charactor Design
 
-    -
+    - Weenut 612110086
 
     -
 
-    -
 
     Level Design
 
     -
+    Parichat 612110054
 
-    -
+    - Napakamee  612110048
 
-    -'
+'
 --- !u!222 &1565155684
 CanvasRenderer:
   m_ObjectHideFlags: 0
