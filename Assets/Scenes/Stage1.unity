@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2700,6 +2700,7 @@ MonoBehaviour:
   m_Bullet: {fileID: 4147923954745325246, guid: 3e98bc446afc22b469077063cf4e1dc5,
     type: 3}
   isDead: 0
+  godMode: 0
   _crosshairPos: {fileID: 1127957672}
   firePoint: {fileID: 576347104}
   HookLineRenderer: {fileID: 1100231751}
@@ -2715,7 +2716,7 @@ MonoBehaviour:
   FireRateUpgradeStatus: {fileID: 850772866}
   BulletSpeedUpgradeStatus: {fileID: 1731883353}
   MaxHPUpgradeStatus: {fileID: 1297201794}
-  fireSound: {fileID: 8300000, guid: b8f67c20567cde24a9dddec07fe8737a, type: 3}
+  fireSound: {fileID: 8300000, guid: 89042d09177683b40a4e9e8018f3e4e3, type: 3}
   collectSound: {fileID: 8300000, guid: d0a18266c88b88a45b907ee4dc5ad11c, type: 3}
   changeModeSound: {fileID: 8300000, guid: 3b08e4c01d90ffb48a6be60cb258a8eb, type: 3}
   explodeParticle: {fileID: 572109100967416453, guid: 172043a71bfd11c4fb44d13af454f17d,
@@ -2771,7 +2772,7 @@ MonoBehaviour:
     type: 3}
   laserExplode: {fileID: 572109100967416453, guid: fd9915d44c35e474d9333498a126fa72,
     type: 3}
-  explodeSound: {fileID: 8300000, guid: fdb16355c723a4447b491133b39a7b8b, type: 3}
+  explodeSound: {fileID: 8300000, guid: 39ac8a066d71b5943a5c653fa574b7bc, type: 3}
 --- !u!114 &1704431555
 MonoBehaviour:
   m_ObjectHideFlags: 0
