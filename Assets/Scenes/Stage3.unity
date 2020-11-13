@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2402,32 +2402,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - waveName: Wave1
-    noOfEnemies: 5
+    noOfEnemies: 10
     typeOfEnemies:
-    - {fileID: 2489472318681787456, guid: d8217e5a5466f3247959d6f72437f95b, type: 3}
-    spawnInterval: 4
+    - {fileID: 2489472318681787456, guid: c1c040b03fd934c4d81fcca9c313af35, type: 3}
+    spawnInterval: 2.5
   - waveName: Wave2
-    noOfEnemies: 8
+    noOfEnemies: 12
     typeOfEnemies:
     - {fileID: 2489472318681787456, guid: d8217e5a5466f3247959d6f72437f95b, type: 3}
     - {fileID: 2489472318681787456, guid: c1c040b03fd934c4d81fcca9c313af35, type: 3}
-    spawnInterval: 3
+    spawnInterval: 2
   - waveName: Wave3
-    noOfEnemies: 8
+    noOfEnemies: 13
     typeOfEnemies:
-    - {fileID: 2489472318681787456, guid: d8217e5a5466f3247959d6f72437f95b, type: 3}
-    - {fileID: 2489472318681787456, guid: c1c040b03fd934c4d81fcca9c313af35, type: 3}
     - {fileID: 2489472318681787456, guid: a6c40ddec0323bd49b4a50e03c64306d, type: 3}
+    - {fileID: 2489472318681787456, guid: c84f436e19fdf00499d2a4de389bb90d, type: 3}
+    - {fileID: 2489472318681787456, guid: 62638330edb987244b3644b65f0201e4, type: 3}
     spawnInterval: 2
   - waveName: Wave4
-    noOfEnemies: 5
+    noOfEnemies: 6
     typeOfEnemies:
-    - {fileID: 2489472318681787456, guid: a6c40ddec0323bd49b4a50e03c64306d, type: 3}
+    - {fileID: 2489472318681787456, guid: c84f436e19fdf00499d2a4de389bb90d, type: 3}
+    - {fileID: 2489472318681787456, guid: 62638330edb987244b3644b65f0201e4, type: 3}
     spawnInterval: 4
   - waveName: Wave5
     noOfEnemies: 1
     typeOfEnemies:
-    - {fileID: 5555800913996014666, guid: c7b7675b6a956b842a801ba69825ff6b, type: 3}
+    - {fileID: 6678547113254451664, guid: f79b53f85aaa046428479c6c5c6d0e8d, type: 3}
     spawnInterval: 3
   waveName: {fileID: 603713584}
 --- !u!4 &1606792256
@@ -2700,6 +2701,7 @@ MonoBehaviour:
   m_Bullet: {fileID: 4147923954745325246, guid: 3e98bc446afc22b469077063cf4e1dc5,
     type: 3}
   isDead: 0
+  godMode: 0
   _crosshairPos: {fileID: 1127957672}
   firePoint: {fileID: 576347104}
   HookLineRenderer: {fileID: 1100231751}
@@ -3734,7 +3736,7 @@ PrefabInstance:
     - target: {fileID: 4229562135108441952, guid: 6d6e1d6e928559c4892e4ffcfc559365,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4272954239190426590, guid: 6d6e1d6e928559c4892e4ffcfc559365,
         type: 3}
@@ -3850,6 +3852,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4845529666916779069, guid: 6d6e1d6e928559c4892e4ffcfc559365,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.50000024
       objectReference: {fileID: 0}
     - target: {fileID: 4845529667020504622, guid: 6d6e1d6e928559c4892e4ffcfc559365,
         type: 3}

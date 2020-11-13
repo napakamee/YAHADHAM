@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2201,9 +2201,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - waveName: Wave1
+    noOfEnemies: 7
+    typeOfEnemies:
+    - {fileID: 2489472318681787456, guid: d8217e5a5466f3247959d6f72437f95b, type: 3}
+    - {fileID: 2489472318681787456, guid: c1c040b03fd934c4d81fcca9c313af35, type: 3}
+    spawnInterval: 3
+  - waveName: Wave2
     noOfEnemies: 10
     typeOfEnemies:
+    - {fileID: 2489472318681787456, guid: c1c040b03fd934c4d81fcca9c313af35, type: 3}
+    - {fileID: 2489472318681787456, guid: a6c40ddec0323bd49b4a50e03c64306d, type: 3}
     - {fileID: 2489472318681787456, guid: c84f436e19fdf00499d2a4de389bb90d, type: 3}
+    spawnInterval: 4
+  - waveName: Wave3
+    noOfEnemies: 12
+    typeOfEnemies:
+    - {fileID: 2489472318681787456, guid: c84f436e19fdf00499d2a4de389bb90d, type: 3}
+    - {fileID: 2489472318681787456, guid: c1c040b03fd934c4d81fcca9c313af35, type: 3}
+    spawnInterval: 2.5
+  - waveName: Wave4
+    noOfEnemies: 10
+    typeOfEnemies:
+    - {fileID: 2489472318681787456, guid: a6c40ddec0323bd49b4a50e03c64306d, type: 3}
+    spawnInterval: 3
+  - waveName: Wave5
+    noOfEnemies: 1
+    typeOfEnemies:
+    - {fileID: 1271114798426953880, guid: 08fbb233c111d4944915bb1227abbca0, type: 3}
     spawnInterval: 3
   waveName: {fileID: 846627669}
 --- !u!4 &1606792256

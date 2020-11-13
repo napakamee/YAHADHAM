@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5555800913996014664}
   - component: {fileID: 5555800913996014665}
+  - component: {fileID: 6632225279804695250}
   - component: {fileID: 5555800913996014671}
   - component: {fileID: 5555800913996014670}
   - component: {fileID: 5555800913996014669}
@@ -86,6 +87,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6632225279804695250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5555800913996014666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6c87f6ebeafe39459f3992fab4f16ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFollowPlayer: 0
+  player: {fileID: 0}
+  isRandomSpeed: 0
+  isLaser: 0
+  minSpeed: 0
+  maxSpeed: 0
+  randSpeed: 0
+  speed: 3
+  damage: 5
+  hp: 150
+  getScore: 100
+  explosion: {fileID: 572109100967416453, guid: fd9915d44c35e474d9333498a126fa72,
+    type: 3}
+  bigExplode: {fileID: 572109100967416453, guid: 172043a71bfd11c4fb44d13af454f17d,
+    type: 3}
 --- !u!114 &5555800913996014671
 MonoBehaviour:
   m_ObjectHideFlags: 0

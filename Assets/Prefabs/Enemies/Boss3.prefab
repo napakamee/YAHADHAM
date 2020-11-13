@@ -278,8 +278,8 @@ MonoBehaviour:
   randSpeed: 4
   speed: 1
   damage: 20
-  hp: 200
-  getScore: 50
+  hp: 250
+  getScore: 100
   explosion: {fileID: 572109100967416453, guid: 3931ef6aa52a4cc40bcf827244f52008,
     type: 3}
   bigExplode: {fileID: 572109100967416453, guid: fd9915d44c35e474d9333498a126fa72,

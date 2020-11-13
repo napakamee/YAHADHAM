@@ -134,7 +134,7 @@ MonoBehaviour:
   speed: 1
   damage: 20
   hp: 200
-  getScore: 50
+  getScore: 100
   explosion: {fileID: 572109100967416453, guid: 172043a71bfd11c4fb44d13af454f17d,
     type: 3}
   bigExplode: {fileID: 572109100967416453, guid: fd9915d44c35e474d9333498a126fa72,

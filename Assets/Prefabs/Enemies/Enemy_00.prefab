@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2489472318681787456}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20, y: 3.9590092, z: 0}
+  m_LocalPosition: {x: 20, y: -0.9714513, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -120,9 +120,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.27607453, y: -0.46012568}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.0521495
 --- !u!114 &-855568378762175695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
   speed: 3
   damage: 5
   hp: 3
-  getScore: 10
+  getScore: 5
   explosion: {fileID: 572109100967416453, guid: 309b57b706d3f2947b9f23566f5bd80e,
     type: 3}
   bigExplode: {fileID: 572109100967416453, guid: 172043a71bfd11c4fb44d13af454f17d,
