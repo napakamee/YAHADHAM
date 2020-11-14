@@ -22,7 +22,7 @@ public class LaserScript : MonoBehaviour
     {
         if (start == null)
         {
-            start = Instantiate(laserStart) as GameObject;
+            start = Lean.Pool.LeanPool.Spawn(laserStart) as GameObject;
             start.transform.parent = this.transform;
             start.transform.localPosition = Vector2.zero;
         }
@@ -30,7 +30,7 @@ public class LaserScript : MonoBehaviour
         // Laser middle
         if (middle == null)
         {
-            middle = Instantiate(laserMiddle) as GameObject;
+            middle = Lean.Pool.LeanPool.Spawn(laserMiddle) as GameObject;
             middle.transform.parent = this.transform;
             middle.transform.localPosition = Vector2.zero;
         }
@@ -55,7 +55,7 @@ public class LaserScript : MonoBehaviour
             // -- Create the end sprite
             if (end == null)
             {
-                end = Instantiate(laserEnd) as GameObject;
+                end = Lean.Pool.LeanPool.Spawn(laserEnd) as GameObject;
                 end.transform.parent = this.transform;
                 end.transform.localPosition = Vector2.zero;
             }
@@ -66,7 +66,7 @@ public class LaserScript : MonoBehaviour
         {
             // Nothing hit
             // -- No more end
-            if (end != null) Destroy(end);
+            if (end != null) Lean.Pool.LeanPool.Despawn(end);
         }
 
         // Place things

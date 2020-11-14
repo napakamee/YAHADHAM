@@ -8,9 +8,9 @@ public class UnlockCondition : Singleton<UnlockCondition>
 {
     protected UnlockCondition() { }
 
-    public bool stage1Clear { get; set; } = true;
-    public bool stage2Clear { get; set; }
-    public bool stage3Clear { get; set; }
+    public bool stage1Clear = true;
+    public bool stage2Clear;
+    public bool stage3Clear;
 
     public void SaveFile()
     {

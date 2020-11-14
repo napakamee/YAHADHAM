@@ -26,7 +26,7 @@ public class ItemSpawn : MonoBehaviour
         if (isRandomTime)
             respawnTime = Random.Range(minTime, maxTime);
 
-        GameObject item = Instantiate(Item[Random.Range(0, Item.Length)]);
+        GameObject item = Lean.Pool.LeanPool.Spawn(Item[Random.Range(0, Item.Length)]);
         item.transform.position = new Vector2(Random.Range(-screenBounds.x + 10, screenBounds.x - 2), -screenBounds.y * 1.3f);
     }
     IEnumerator itemWave()

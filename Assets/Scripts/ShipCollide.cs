@@ -15,9 +15,9 @@ public class ShipCollide : MonoBehaviour
         {
 
             //this.GetComponent<AudioSource>().PlayOneShot(explodeSound);
-            GameObject expl = Instantiate(explosion, transform.position, Quaternion.identity) as GameObject;
-            Destroy(expl, 1);
-            Destroy(other.gameObject);
+            GameObject expl = Lean.Pool.LeanPool.Spawn(explosion, transform.position, Quaternion.identity) as GameObject;
+            Lean.Pool.LeanPool.Despawn(expl, 1);
+            Lean.Pool.LeanPool.Despawn(other.gameObject);
             GameManagement.Instance.m_hp -= 5.0f;
         }
 
@@ -33,8 +33,8 @@ public class ShipCollide : MonoBehaviour
             }
             if (effectInterval <= 0)
             {
-                GameObject expl = Instantiate(laserExplode, transform.position, Quaternion.identity) as GameObject;
-                Destroy(expl, .5f);
+                GameObject expl = Lean.Pool.LeanPool.Spawn(laserExplode, transform.position, Quaternion.identity) as GameObject;
+                Lean.Pool.LeanPool.Despawn(expl, .5f);
                 effectInterval = 0.3f;
             }
             //Debug.Log("Laser Hit.");

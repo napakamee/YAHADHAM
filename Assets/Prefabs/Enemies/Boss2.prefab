@@ -133,8 +133,8 @@ MonoBehaviour:
   randSpeed: 4
   speed: 1
   damage: 20
-  hp: 200
-  getScore: 100
+  hp: 450
+  getScore: 350
   explosion: {fileID: 572109100967416453, guid: 172043a71bfd11c4fb44d13af454f17d,
     type: 3}
   bigExplode: {fileID: 572109100967416453, guid: fd9915d44c35e474d9333498a126fa72,
@@ -156,11 +156,7 @@ MonoBehaviour:
   firstStateFirerate: 0.5
   Meteorite: {fileID: 2489472318681787456, guid: a6c40ddec0323bd49b4a50e03c64306d,
     type: 3}
-  spanwPosition:
-  - {fileID: 3178524148176581164}
-  - {fileID: 3178524148586461011}
-  - {fileID: 3178524148861345254}
-  - {fileID: 3178524149041229571}
+  spawnPosition: []
   delay: 5
 --- !u!95 &8627111233828605774
 Animator:

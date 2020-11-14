@@ -17,10 +17,8 @@ public class hookScript : MonoBehaviour
     void Start()
     {
         grappling = GameObject.FindGameObjectWithTag("Player").GetComponent<GrapplingHook>();
-        joint2D = gameObject.GetComponent<FixedJoint2D>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = this.GetComponent<Rigidbody2D>();
-        joint2D.enabled = false;
         returning = false;
     }
     void Update()
@@ -54,16 +52,23 @@ public class hookScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Item")
         {
-            joint2D.enabled = true;
+            joint2D = gameObject.AddComponent<FixedJoint2D>();
             joint2D.connectedBody = other.gameObject.GetComponent<Rigidbody2D>();
             this.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             returning = true;
         }
         if (other.gameObject.tag == "Player" && returning)
         {
+
+            foreach (FixedJoint2D fj in GetComponents<FixedJoint2D>())
+            {
+                Destroy(fj);
+            }
+            rb.velocity = Vector2.zero;
+            joint2D = null;
             returning = false;
             grappling.returned();
-            Destroy(this.gameObject);
+            Lean.Pool.LeanPool.Despawn(this.gameObject);
         }
     }
 }

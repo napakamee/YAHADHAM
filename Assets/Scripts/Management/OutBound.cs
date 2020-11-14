@@ -16,9 +16,10 @@ public class OutBound : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.x > screenBounds.x * 1.2 || transform.position.x < screenBounds.x * -1.2 
-        || transform.position.y > screenBounds.y * 1.5 || transform.position.y < screenBounds.y * -1.5){
-            Destroy(this.gameObject);
+        if (transform.position.x > screenBounds.x * 1.2 || transform.position.x < screenBounds.x * -1.2
+        || transform.position.y > screenBounds.y * 1.5 || transform.position.y < screenBounds.y * -1.5)
+        {
+            Lean.Pool.LeanPool.Despawn(this.gameObject);
         }
     }
 }

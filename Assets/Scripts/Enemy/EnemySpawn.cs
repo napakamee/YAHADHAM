@@ -16,7 +16,7 @@ public class EnemySpawn : MonoBehaviour
     }
     private void spawnEnemy()
     {
-        GameObject a = Instantiate(Enemy[Random.Range(0, Enemy.Length)]) as GameObject;
+        GameObject a = Lean.Pool.LeanPool.Spawn(Enemy[Random.Range(0, Enemy.Length)]) as GameObject;
         a.transform.position = new Vector2(screenBounds.x * 2, Random.Range(-screenBounds.y, screenBounds.y));
     }
     IEnumerator enemyWave()

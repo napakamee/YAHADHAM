@@ -25,7 +25,8 @@ public class ItemScript : MonoBehaviour
                 case 4: Debug.Log("Repair Kit Picked up"); shipControl.PickRepairKit();break;
                 default: break;
             }
-            Destroy(this.gameObject);
+            
+            Lean.Pool.LeanPool.Despawn(this.gameObject);
         }
     }
 }

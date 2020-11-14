@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5639268721846430066}
   - component: {fileID: 7834118157730710085}
   - component: {fileID: 5647633293050410894}
-  - component: {fileID: -4688739367623556714}
   m_Layer: 0
   m_Name: Hook
   m_TagString: Untagged
@@ -136,21 +135,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   returnSpeed: 15
   MAXDISTANCE: 20
---- !u!255 &-4688739367623556714
-FixedJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7664686868533526029}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
-  m_DampingRatio: 0
-  m_Frequency: 0

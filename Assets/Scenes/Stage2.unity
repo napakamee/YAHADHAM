@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -386,6 +386,12 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &219373585 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8308620607411382196, guid: 609c8add333b3534484e3538dfa5d739,
+    type: 3}
+  m_PrefabInstance: {fileID: 8308620605979675000}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &230341486
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,7 +568,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_RenderPostProcessing: 0
-  m_Antialiasing: 0
+  m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -2180,6 +2186,7 @@ GameObject:
   - component: {fileID: 1606792257}
   - component: {fileID: 1606792258}
   - component: {fileID: 1606792259}
+  - component: {fileID: 1606792260}
   m_Layer: 0
   m_Name: Spawnner
   m_TagString: Untagged
@@ -2201,7 +2208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - waveName: Wave1
-    noOfEnemies: 7
+    noOfEnemies: 15
     typeOfEnemies:
     - {fileID: 2489472318681787456, guid: d8217e5a5466f3247959d6f72437f95b, type: 3}
     - {fileID: 2489472318681787456, guid: c1c040b03fd934c4d81fcca9c313af35, type: 3}
@@ -2218,12 +2225,12 @@ MonoBehaviour:
     typeOfEnemies:
     - {fileID: 2489472318681787456, guid: c84f436e19fdf00499d2a4de389bb90d, type: 3}
     - {fileID: 2489472318681787456, guid: c1c040b03fd934c4d81fcca9c313af35, type: 3}
-    spawnInterval: 2.5
+    spawnInterval: 3
   - waveName: Wave4
     noOfEnemies: 10
     typeOfEnemies:
     - {fileID: 2489472318681787456, guid: a6c40ddec0323bd49b4a50e03c64306d, type: 3}
-    spawnInterval: 3
+    spawnInterval: 2
   - waveName: Wave5
     noOfEnemies: 1
     typeOfEnemies:
@@ -2304,6 +2311,24 @@ MonoBehaviour:
   isRandomTime: 0
   maxTime: 20
   minTime: 10
+--- !u!114 &1606792260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606792254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61a569a737c1ad4d87dd57e2f1cd64c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Item:
+  - {fileID: 219373585}
+  respawnTime: 20
+  isRandomTime: 1
+  maxTime: 30
+  minTime: 20
 --- !u!4 &1673007995 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5508861656715875908, guid: 182c583c2b4245a409bc325b718ac557,
@@ -2512,10 +2537,10 @@ MonoBehaviour:
   ShootingSight: {fileID: 21300000, guid: c3086ddab3187a94bad01045194f556e, type: 3}
   HookSight: {fileID: 21300000, guid: 430fd01e8eb7c644db4a6cd50374c5ed, type: 3}
   HookButton: {fileID: 1016776882}
-  DamageUpgradeStatus: {fileID: 0}
-  FireRateUpgradeStatus: {fileID: 0}
-  BulletSpeedUpgradeStatus: {fileID: 0}
-  MaxHPUpgradeStatus: {fileID: 0}
+  DamageUpgradeStatus: {fileID: 1743229261}
+  FireRateUpgradeStatus: {fileID: 1743229260}
+  BulletSpeedUpgradeStatus: {fileID: 1743229259}
+  MaxHPUpgradeStatus: {fileID: 1743229258}
   fireSound: {fileID: 8300000, guid: b8f67c20567cde24a9dddec07fe8737a, type: 3}
   collectSound: {fileID: 8300000, guid: d0a18266c88b88a45b907ee4dc5ad11c, type: 3}
   changeModeSound: {fileID: 8300000, guid: 3b08e4c01d90ffb48a6be60cb258a8eb, type: 3}
@@ -3610,6 +3635,54 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1743229258 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4845529667695496845, guid: 6d6e1d6e928559c4892e4ffcfc559365,
+    type: 3}
+  m_PrefabInstance: {fileID: 1743229254}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1743229259 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4845529668070180182, guid: 6d6e1d6e928559c4892e4ffcfc559365,
+    type: 3}
+  m_PrefabInstance: {fileID: 1743229254}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1743229260 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4845529666636691341, guid: 6d6e1d6e928559c4892e4ffcfc559365,
+    type: 3}
+  m_PrefabInstance: {fileID: 1743229254}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1743229261 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4845529667358891512, guid: 6d6e1d6e928559c4892e4ffcfc559365,
+    type: 3}
+  m_PrefabInstance: {fileID: 1743229254}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1810682698 stripped

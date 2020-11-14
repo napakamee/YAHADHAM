@@ -157,14 +157,14 @@ public class ShipControl : MonoBehaviour
 
     void PlayerDead()
     {
-        Destroy(this.gameObject);
-        Destroy(Crosshair.gameObject);
-        GameObject expl = Instantiate(explodeParticle, transform.position, Quaternion.identity) as GameObject;
+        Lean.Pool.LeanPool.Despawn(this.gameObject);
+        Lean.Pool.LeanPool.Despawn(Crosshair.gameObject);
+        GameObject expl =  Lean.Pool.LeanPool.Spawn(explodeParticle, transform.position, Quaternion.identity) as GameObject;
         isDead = true;
     }
     void Shoot()
     {
-        GameObject bl = Instantiate(m_Bullet, firePoint.position, firePoint.rotation * Quaternion.Euler(0, 0, 90));
+        GameObject bl = Lean.Pool.LeanPool.Spawn(m_Bullet, firePoint.position, firePoint.rotation * Quaternion.Euler(0, 0, 90));
         Rigidbody2D rb_bl = bl.GetComponent<Rigidbody2D>();
 
         rb_bl.AddForce(firePoint.right * GameManagement.Instance.bulletForce / 20, ForceMode2D.Force);
@@ -250,10 +250,20 @@ public class ShipControl : MonoBehaviour
     }
     public void PickMaxHPUpgrade()
     {
+        if (GameManagement.Instance.m_hp < GameManagement.Instance.Max_HP)
+        {
+            GameManagement.Instance.m_hp += 10.0f;
+            if (GameManagement.Instance.m_hp > GameManagement.Instance.Max_HP)
+            {
+                GameManagement.Instance.m_hp = GameManagement.Instance.Max_HP;
+
+            }
+        }
+
         if (GameManagement.Instance.Max_HP < 200)
         {
             GameManagement.Instance.Max_HP += 20;
-            GameManagement.Instance.m_hp += 20.0f;
+
 
             if (GameManagement.Instance.Max_HP > 200)
             {
@@ -277,7 +287,7 @@ public class ShipControl : MonoBehaviour
     {
         if (GameManagement.Instance.m_hp < GameManagement.Instance.Max_HP)
         {
-            GameManagement.Instance.m_hp += 10.0f;
+            GameManagement.Instance.m_hp += 20.0f;
 
             if (GameManagement.Instance.m_hp > GameManagement.Instance.Max_HP)
             {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
 public class GameManagement : MonoBehaviour
 {
     //protected GameManagement() {}
@@ -115,6 +116,5 @@ public class GameManagement : MonoBehaviour
             case "Stage1": UnlockCondition.Instance.stage2Clear = true; break;
             case "Stage2": UnlockCondition.Instance.stage3Clear = true; break;
         }
-        UnlockCondition.Instance.SaveFile();
     }
 }

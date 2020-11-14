@@ -74,7 +74,7 @@ public class WaveSpawner : MonoBehaviour
         {
             GameObject randomEnemy = currentWave.typeOfEnemies[Random.Range(0, currentWave.typeOfEnemies.Length)];
             randomEnemy.transform.position = new Vector2(screenBounds.x * 2, Random.Range(-screenBounds.y + 1, screenBounds.y - 1));
-            Instantiate(randomEnemy);
+            Lean.Pool.LeanPool.Spawn(randomEnemy);
             currentWave.noOfEnemies--;
             nextSpawnTime = Time.time + currentWave.spawnInterval;
 

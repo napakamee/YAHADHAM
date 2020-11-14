@@ -7,70 +7,70 @@ public class SetActiveForBoss2 : MonoBehaviour
     // Start is called before the first frame update
 
     public GameObject Pathern;
-    
-    public float firstStateFirerate=0;
-    float timeStart=10;
-    int stage=0;
-    private  EnemyFirePattern pathern;
-    public GameObject Meteorite;
-    public Transform[] spanwPosition;
-    public float delay=0;
-    private float nextSpawn=0;
 
-    
+    public float firstStateFirerate = 0;
+    float timeStart = 10;
+    int stage = 0;
+    private EnemyFirePattern pathern;
+    public GameObject Meteorite;
+    public Transform[] spawnPosition;
+    public float delay = 0;
+    private float nextSpawn = 0;
+
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
-        stage=1;
-        pathern=Pathern.GetComponent<EnemyFirePattern>();
-        
 
-       
+        stage = 1;
+        pathern = Pathern.GetComponent<EnemyFirePattern>();
+
+
+
     }
-    
+
     void TimeToChange()
     {
-        
-        pathern.normalFire=true;
-        pathern.isSpread=false;
-        pathern.firerate=firstStateFirerate;
-        
-        
-        
-            
-            if(timeStart<=0)
-            {
-                stage=2;
-                timeStart=10;
-            }
-            
-            
-        
+
+        pathern.normalFire = true;
+        pathern.isSpread = false;
+        pathern.firerate = firstStateFirerate;
+
+
+
+
+        if (timeStart <= 0)
+        {
+            stage = 2;
+            timeStart = 10;
+        }
+
+
+
     }
     void TimeToChange2()
     {
-        pathern.normalFire=false;
-        pathern.isSpread=true;
-        pathern.firerate=firstStateFirerate;
-        
-        
-        
-            
-            if(timeStart<=0)
-            {
-                stage=1;
-                timeStart=10;
-            }
-            
-        
+        pathern.normalFire = false;
+        pathern.isSpread = true;
+        pathern.firerate = firstStateFirerate;
+
+
+
+
+        if (timeStart <= 0)
+        {
+            stage = 1;
+            timeStart = 10;
+        }
+
+
     }
-    
+
     void MeteorSpawn()
     {
-        GameObject meteorite=Instantiate(Meteorite,spanwPosition[Random.Range(0,spanwPosition.Length)]) as GameObject;
+        GameObject meteorite = Lean.Pool.LeanPool.Spawn(Meteorite, spawnPosition[Random.Range(0, spawnPosition.Length)]) as GameObject;
 
     }
     // Update is called once per frame
@@ -80,27 +80,29 @@ public class SetActiveForBoss2 : MonoBehaviour
     }
     void LateUpdate()
     {
-        nextSpawn-=Time.deltaTime;
-        if(nextSpawn<=0)
+        nextSpawn -= Time.deltaTime;
+        if (nextSpawn <= 0)
         {
-            nextSpawn=delay;
+            nextSpawn = delay;
             MeteorSpawn();
         }
-        switch(stage)
+        switch (stage)
         {
-            case 1 : TimeToChange();
-            break;
-            case 2 : TimeToChange2();
-            break;
-            
+            case 1:
+                TimeToChange();
+                break;
+            case 2:
+                TimeToChange2();
+                break;
+
             default:
-            break;
+                break;
 
 
         }
-        timeStart -=Time.deltaTime;
-        
-        
-        
+        timeStart -= Time.deltaTime;
+
+
+
     }
 }
