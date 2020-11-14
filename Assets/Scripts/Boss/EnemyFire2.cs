@@ -30,7 +30,7 @@ public class EnemyFire2 : MonoBehaviour
         Vector3 bulMoveVector = new Vector3(bulDirX,bulDirY,0f);
         Vector2 bulDir=(bulMoveVector-transform.position).normalized;
 
-        GameObject b = Lean.Pool.LeanPool.Spawn(bullet) as GameObject;
+        GameObject b = Instantiate(bullet) as GameObject;
         b.transform.position=transform.position;
         b.transform.rotation=transform.rotation;
         b.SetActive(true);

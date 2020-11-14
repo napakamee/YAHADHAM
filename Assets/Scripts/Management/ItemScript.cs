@@ -26,7 +26,7 @@ public class ItemScript : MonoBehaviour
                 default: break;
             }
             
-            Lean.Pool.LeanPool.Despawn(this.gameObject);
+            Destroy(this.gameObject);
         }
     }
 }

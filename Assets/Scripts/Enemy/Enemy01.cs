@@ -64,31 +64,31 @@ public class Enemy01 : MonoBehaviour
 
     void HitByBullet(Collider2D other)
     {
-        GameObject expl = Lean.Pool.LeanPool.Spawn(explosion, transform.position, Quaternion.identity) as GameObject;
+        GameObject expl = Instantiate(explosion, transform.position, Quaternion.identity) as GameObject;
         hp -= GameManagement.Instance.BulletDamage;
-        Lean.Pool.LeanPool.Despawn(other.gameObject);
-        Lean.Pool.LeanPool.Despawn(expl, 1);
+        Destroy(other.gameObject);
+        Destroy(expl, 1);
 
         if (hp <= 0)
         {
-            GameObject b_expl = Lean.Pool.LeanPool.Spawn(bigExplode, transform.position, Quaternion.identity) as GameObject;
+            GameObject b_expl = Instantiate(bigExplode, transform.position, Quaternion.identity) as GameObject;
             GameManagement.Instance.Score += getScore;
-            Lean.Pool.LeanPool.Despawn(this.gameObject);
-            Lean.Pool.LeanPool.Despawn(b_expl, 2);
+            Destroy(this.gameObject);
+            Destroy(b_expl, 2);
         }
     }
 
     void HitByPlayer(Collider2D other)
     {
-        GameObject b_expl = Lean.Pool.LeanPool.Spawn(bigExplode, transform.position, Quaternion.identity) as GameObject;
+        GameObject b_expl = Instantiate(bigExplode, transform.position, Quaternion.identity) as GameObject;
         GameManagement.Instance.m_hp -= damage;
-        Lean.Pool.LeanPool.Despawn(b_expl, 2);
-        Lean.Pool.LeanPool.Despawn(this.gameObject);
+        Destroy(b_expl, 2);
+        Destroy(this.gameObject);
     }
     void Update()
     {
         if (transform.position.x < screenBounds.x * -1.2)
-            Lean.Pool.LeanPool.Despawn(this.gameObject);
+            Destroy(this.gameObject);
 
         if (GameManagement.Instance.isStartGame)
         {

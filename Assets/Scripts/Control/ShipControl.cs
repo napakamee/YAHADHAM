@@ -157,14 +157,14 @@ public class ShipControl : MonoBehaviour
 
     void PlayerDead()
     {
-        Lean.Pool.LeanPool.Despawn(this.gameObject);
-        Lean.Pool.LeanPool.Despawn(Crosshair.gameObject);
-        GameObject expl =  Lean.Pool.LeanPool.Spawn(explodeParticle, transform.position, Quaternion.identity) as GameObject;
+        Destroy(this.gameObject);
+        Destroy(Crosshair.gameObject);
+        GameObject expl =  Instantiate(explodeParticle, transform.position, Quaternion.identity) as GameObject;
         isDead = true;
     }
     void Shoot()
     {
-        GameObject bl = Lean.Pool.LeanPool.Spawn(m_Bullet, firePoint.position, firePoint.rotation * Quaternion.Euler(0, 0, 90));
+        GameObject bl = Instantiate(m_Bullet, firePoint.position, firePoint.rotation * Quaternion.Euler(0, 0, 90));
         Rigidbody2D rb_bl = bl.GetComponent<Rigidbody2D>();
 
         rb_bl.AddForce(firePoint.right * GameManagement.Instance.bulletForce / 20, ForceMode2D.Force);

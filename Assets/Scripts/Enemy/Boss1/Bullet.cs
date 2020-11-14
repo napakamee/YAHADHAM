@@ -47,7 +47,7 @@ public class Bullet : MonoBehaviour
     {
         if (col.gameObject.tag.Equals("Player"))
         {
-            Lean.Pool.LeanPool.Despawn(gameObject);
+            Destroy(gameObject);
         }
     }
 }

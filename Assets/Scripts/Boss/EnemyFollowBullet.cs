@@ -17,7 +17,7 @@ public class EnemyFollowBullet : MonoBehaviour
         target=GameObject.FindGameObjectWithTag("Player");
         moveDir=(target.transform.position-transform.position).normalized*Speed;
         rb.velocity=new Vector2(moveDir.x,moveDir.y);
-        Lean.Pool.LeanPool.Despawn(gameObject);
+        Destroy(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -25,7 +25,7 @@ public class EnemyFollowBullet : MonoBehaviour
         if(col.gameObject.tag.Equals("Player"))
         {
             
-            Lean.Pool.LeanPool.Despawn(gameObject);
+            Destroy(gameObject);
         }
     }
 

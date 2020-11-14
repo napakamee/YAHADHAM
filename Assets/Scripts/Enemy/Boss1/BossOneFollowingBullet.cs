@@ -80,32 +80,32 @@ public class BossOneFollowingBullet : MonoBehaviour
 
     void HitByBullet(Collider2D other)
     {
-        GameObject expl = Lean.Pool.LeanPool.Spawn(explosion, transform.position, Quaternion.identity) as GameObject;
+        GameObject expl = Instantiate(explosion, transform.position, Quaternion.identity) as GameObject;
         hp -= GameManagement.Instance.BulletDamage;
-        Lean.Pool.LeanPool.Despawn(other.gameObject);
-        Lean.Pool.LeanPool.Despawn(expl, 1);
+        Destroy(other.gameObject);
+        Destroy(expl, 1);
 
         if (hp <= 0)
         {
-            GameObject b_expl = Lean.Pool.LeanPool.Spawn(bigExplode, transform.position, Quaternion.identity) as GameObject;
+            GameObject b_expl = Instantiate(bigExplode, transform.position, Quaternion.identity) as GameObject;
             GameManagement.Instance.Score += getScore;
-            Lean.Pool.LeanPool.Despawn(this.gameObject);
-            Lean.Pool.LeanPool.Despawn(b_expl, 2);
+            Destroy(this.gameObject);
+            Destroy(b_expl, 2);
         }
     }
 
     void HitByPlayer(Collider2D other)
     {
-        GameObject b_expl = Lean.Pool.LeanPool.Spawn(bigExplode, transform.position, Quaternion.identity) as GameObject;
+        GameObject b_expl = Instantiate(bigExplode, transform.position, Quaternion.identity) as GameObject;
         GameManagement.Instance.m_hp -= damage;
-        Lean.Pool.LeanPool.Despawn(b_expl, 2);
-        Lean.Pool.LeanPool.Despawn(this.gameObject);
+        Destroy(b_expl, 2);
+        Destroy(this.gameObject);
     }
 
     void CheckToFire()
     {
 
-        if (ammoAmount <= 0)
+        if (ammoAmount <= 0 && GameManagement.Instance.isStartGame)
         {
             delay -= Time.deltaTime;
             if (delay <= 0)
@@ -123,7 +123,7 @@ public class BossOneFollowingBullet : MonoBehaviour
     {
         if (Time.time > nextFire)
         {
-            Lean.Pool.LeanPool.Spawn(bullet, transform.position, Quaternion.identity);
+            Instantiate(bullet, transform.position, Quaternion.identity);
             nextFire = Time.time + fireRate;
         }
     }

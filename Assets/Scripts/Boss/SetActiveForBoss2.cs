@@ -70,7 +70,7 @@ public class SetActiveForBoss2 : MonoBehaviour
 
     void MeteorSpawn()
     {
-        GameObject meteorite = Lean.Pool.LeanPool.Spawn(Meteorite, spawnPosition[Random.Range(0, spawnPosition.Length)]) as GameObject;
+        GameObject meteorite = Instantiate(Meteorite, spawnPosition[Random.Range(0, spawnPosition.Length)]) as GameObject;
 
     }
     // Update is called once per frame

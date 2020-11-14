@@ -68,7 +68,7 @@ public class hookScript : MonoBehaviour
             joint2D = null;
             returning = false;
             grappling.returned();
-            Lean.Pool.LeanPool.Despawn(this.gameObject);
+            Destroy(this.gameObject);
         }
     }
 }

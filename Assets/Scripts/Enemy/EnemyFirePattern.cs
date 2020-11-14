@@ -31,7 +31,7 @@ public class EnemyFirePattern : MonoBehaviour
     private void spawnBullet()
     {
 
-        GameObject b = Lean.Pool.LeanPool.Spawn(bullet) as GameObject;
+        GameObject b = Instantiate(bullet) as GameObject;
         b.transform.position = this.transform.position;
         //b.transform.rotation = this.transform.rotation;
         b.GetComponent<Rigidbody2D>().velocity = new Vector2(-bulletSpeed, 0);
@@ -50,7 +50,7 @@ public class EnemyFirePattern : MonoBehaviour
             Vector3 bulMoveVector = new Vector3(bulDirX, bulDirY, 0f);
             Vector2 bulDir = (bulMoveVector - transform.position).normalized;
 
-            GameObject b = Lean.Pool.LeanPool.Spawn(bullet) as GameObject;
+            GameObject b = Instantiate(bullet) as GameObject;
             b.transform.position = transform.position;
             //b.transform.rotation = transform.rotation;
             b.GetComponent<EnemyBullet>().SetMoveDirection(bulDir);
@@ -63,7 +63,7 @@ public class EnemyFirePattern : MonoBehaviour
     {
         if (start == null)
         {
-            start = Lean.Pool.LeanPool.Spawn(laserStart) as GameObject;
+            start = Instantiate(laserStart) as GameObject;
             start.transform.parent = this.transform;
             start.transform.localPosition = Vector2.zero;
         }
@@ -71,7 +71,7 @@ public class EnemyFirePattern : MonoBehaviour
         // Laser middle
         if (middle == null)
         {
-            middle = Lean.Pool.LeanPool.Spawn(laserMiddle) as GameObject;
+            middle = Instantiate(laserMiddle) as GameObject;
             middle.transform.parent = this.transform;
             middle.transform.localPosition = Vector2.zero;
         }
@@ -96,7 +96,7 @@ public class EnemyFirePattern : MonoBehaviour
             // -- Create the end sprite
             if (end == null)
             {
-                end = Lean.Pool.LeanPool.Spawn(laserEnd) as GameObject;
+                end = Instantiate(laserEnd) as GameObject;
                 end.transform.parent = this.transform;
                 end.transform.localPosition = Vector2.zero;
             }
@@ -107,7 +107,7 @@ public class EnemyFirePattern : MonoBehaviour
         {
             // Nothing hit
             // -- No more end
-            if (end != null) Lean.Pool.LeanPool.Despawn(end);
+            if (end != null) Destroy(end);
         }
 
         // Place things
